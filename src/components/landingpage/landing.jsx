@@ -3,6 +3,7 @@ import Header from '../header/header'
 import Search from '../search/search'
 import Slide from '../slider/slide'
 import Footer from '../footer/footer'
+import Card from '../cards/Card'
 
 const landing = () => {
   return (
@@ -10,6 +11,7 @@ const landing = () => {
         <Header />
         <Search />
         <Slide />
+        <Card />
         <Footer />
     </div>
     
