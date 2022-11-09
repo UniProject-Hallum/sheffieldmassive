@@ -1,4 +1,6 @@
+//import React from 'react'
 //import ReactDOM from "react-dom";
+
 import Login from "./components/loginandregister/login2";
 import Register from "./components/loginandregister/register";
 import Home from './components/landingpage/landing';
@@ -19,10 +21,12 @@ function App() {
           <Route path='/register' element={<Register/>} />
           <Route path='/search' element={<Search/>} />
           <Route path='/profile' element={<Profile/>} />
-          <Route path='/contact' element={<Contact/>} />
+          <Route path='/contact' element={<Contact/>} />      
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+

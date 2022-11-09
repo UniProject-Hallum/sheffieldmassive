@@ -1,0 +1,34 @@
+{
+  "resources": [
+
+    {
+      "title": "Bathroom",
+      "imageUrl": "../../assets/bathroom.png"
+    },
+    {
+      "title": "Cleaning",
+      "imageUrl": "assets/cleaning.png"
+    },
+    {
+      "title": "General Repairs",
+      "imageUrl": "assets/general-repairs.png"
+    },
+    {
+      "title": "Electric",
+      "imageUrl": "assets/electric.png"
+    },
+    {
+      "title": "Plumbing",
+      "imageUrl": "assets/plumbing.png"
+    },
+    {
+      "title": "Tiling",
+      "imageUrl": "assets/tiling.png"
+    },
+    {
+      "title": "Woodwork",
+      "imageUrl": "assets/woodwork.png"
+    }
+ 
+  ]
+}
