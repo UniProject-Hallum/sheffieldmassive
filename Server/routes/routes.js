@@ -1,6 +1,6 @@
 import express from 'express';
-import UserLogin from '../controller/UserLogin.js'
- import UserRegistration from '../controller/UserRegistration.js'
+import userLogin from '../controllers/userLogin.js';
+import userRegistration from '../controllers/userRegistration.js';
 
 import cors from 'cors';
 
@@ -10,8 +10,8 @@ app.use(express.json());
 //all cross object referencing from front end
 app.use(cors());
 
-app.post('/api/login',UserLogin);
-app.post('/api/register',UserRegistration);
+app.post('/api/login',userLogin);
+app.post('/api/register',userRegistration);
 
 app.get('/', (req, res) => {
     res.json({message:'Hello World!'})

@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 
 
 
-const UserRegistration =async (req, res) => {
+const userRegistration =async (req, res) => {
     res.set('Access-Control-Allow-Origin', 'http://localhost:3000');
     
     const {email,username,password,role}= req.body;
@@ -16,7 +16,7 @@ const UserRegistration =async (req, res) => {
 
     
     const emailCheck = await userModel.findOne({"email":email});
-    const usernameCheck = await userDetailsModel.findOne({"username":username});
+    const usernameCheck = await userModel.findOne({"username":username});
 
     console.log("find a user "+user);
 
@@ -65,4 +65,4 @@ const UserRegistration =async (req, res) => {
 
 
 
-export default UserRegistration;
+export default userRegistration;

@@ -3,7 +3,7 @@ import userModel from "../models/UserModel.js";
 import bcryppt from 'bcrypt';
 
 
-const UserLogin  =async (req, res) => {
+const userLogin  =async (req, res) => {
 
     const {email,password}= req.body;
 
@@ -47,4 +47,4 @@ const UserLogin  =async (req, res) => {
     }
 }
 
-export default UserLogin;
+export default userLogin;
