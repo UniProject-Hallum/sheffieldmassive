@@ -3,7 +3,7 @@ import userModel from "../models/UserModel.js";
 import bcryppt from 'bcrypt';
 
 
-const userLogin  =async (req, res) => {
+const UserLogin  =async (req, res) => {
 
     const {email,password}= req.body;
 
@@ -19,7 +19,6 @@ const userLogin  =async (req, res) => {
         console.log("user item:    "+  user)
         const userPassword= user.password;
         const username= user.username;
-        const id = user._id;
         const userRole= user.role;
 
         const passwordIsSame= await bcryppt.compare(password,userPassword);
@@ -48,4 +47,4 @@ const userLogin  =async (req, res) => {
     }
 }
 
-export default userLogin;
+export default UserLogin;
