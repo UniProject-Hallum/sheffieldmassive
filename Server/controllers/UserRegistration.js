@@ -36,6 +36,7 @@ const userRegistration =async (req, res) => {
             // newItem.save();
             console.log('REGISTERED: '+ newUser) ;
             const idInserted = newUser._id;
+            const maxAge = 60*60*3;
             const token = jwt.sign({
                     id:idInserted,
                     email,
@@ -43,11 +44,19 @@ const userRegistration =async (req, res) => {
                     role,
                 },
                 process.env.JWT_SECRET,{
-                    expiresIn:'3d',
-                });
+                    expiresIn:maxAge,
+            });
+            
+            res.cookie("jwt", token, {
+                httpOnly: true,
+                maxAge: maxAge * 1000, // 3hrs in ms
+            }); 
 
            newUser.token = token;            
-           res.status(201).json(newUser);             
+           return res.status(201).json({
+            message: "User successfully created",
+            user: newUser._id,
+          });             
         }
         
     }catch (err) {

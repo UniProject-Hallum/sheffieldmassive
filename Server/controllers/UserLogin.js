@@ -26,15 +26,25 @@ const userLogin  =async (req, res) => {
 
         if(passwordIsSame){
             try {
+                const maxAge = 60*60*3;
                 const token = jwt.sign({
                     userId,email,username,userRole
                 },process.env.JWT_SECRET,
                 {
-                    expiresIn:'3d',
+                    expiresIn: maxAge,
                 })
+
+                res.cookie("jwt", token, {
+                    httpOnly: true,
+                    maxAge: maxAge * 1000, // 3hrs in ms
+                }); 
                 
                 user.token = token
-                return res.status(200).json(user);
+
+                return res.status(201).json({
+                            message: "User successfully logged in",
+                            user: user._id,
+                 });
 
             } catch (error) {
                 console.log(error);
