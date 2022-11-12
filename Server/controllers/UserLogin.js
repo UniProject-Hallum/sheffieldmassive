@@ -20,30 +20,28 @@ const userLogin  =async (req, res) => {
         const userPassword= user.password;
         const username= user.username;
         const userRole= user.role;
+        const userId = user._id;
 
         const passwordIsSame= await bcryppt.compare(password,userPassword);
 
         if(passwordIsSame){
-            jwt.sign({
-                    id,email,username,userRole
+            try {
+                const token = jwt.sign({
+                    userId,email,username,userRole
                 },process.env.JWT_SECRET,
                 {
                     expiresIn:'3d',
-                },
-                (err,token) => {
-                    if(err){
-                        return res.status(500).send(err);
-                    }
+                })
+                
+                user.token = token
+                return res.status(200).json(user);
 
-                    res.json(token)
-                    console.log("token: "+token)
-
-                });
-
-        }else{
-            res.sendStatus(401);
+            } catch (error) {
+                console.log(error);
+                return res.status(500).send(error);
+            }      
         }
-
+        
     }
 }
 
