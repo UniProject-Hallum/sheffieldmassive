@@ -6,6 +6,7 @@ import Header from "./components/header/header";
 import Search from "./components/searchresults/results";
 import Profile from "./components/profile/profile"
 import Contact from "./components/contact/contact";
+import Handy from "./components/handylanding/handylanding"
 
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
@@ -20,6 +21,7 @@ function App() {
           <Route path='/search' element={<Search/>} />
           <Route path='/profile' element={<Profile/>} />
           <Route path='/contact' element={<Contact/>} />
+          <Route path='/handyman' element={<Handy/>} />
       </Routes>
     </Router>
   );
