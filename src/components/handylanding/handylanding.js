@@ -3,6 +3,7 @@ import Header from '../header/header'
 import Skills from '../handylanding/myskills'
 import Banner from '../handylanding/banner'
 import JobReq from "../handylanding/jobrequest"
+import AcceptJobs from "../handylanding/acceptedjobs"
 import Footer from '../footer/footer'
 
 const handylanding = () => {
@@ -13,7 +14,7 @@ const handylanding = () => {
         <Skills />
         
         <JobReq />
-
+        <AcceptJobs />
         <Footer />
     </div>
     

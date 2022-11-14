@@ -14,7 +14,7 @@ import Checkbox from '@mui/material/Checkbox'
 const skills = () => {
     return (
         
-    <div className='sm:flex pt-5 pr-20 justify-center mb-10'> 
+    <div className='sm:flex pt-5 pr-20 justify-center'> 
         <h2 className='font-bold pr-20'>My Skills</h2>
         <img className='w-1/12' src={bathroom} alt="bathroom" />
         <img className='w-1/12' src={cleaning} alt="cleaning" />
