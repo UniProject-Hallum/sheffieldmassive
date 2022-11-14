@@ -1,8 +1,8 @@
 import React from 'react'
 import Header from '../header/header'
-import Search from '../search/search'
 import Skills from '../handylanding/myskills'
 import Banner from '../handylanding/banner'
+import JobReq from "../handylanding/jobrequest"
 import Footer from '../footer/footer'
 
 const handylanding = () => {
@@ -12,8 +12,7 @@ const handylanding = () => {
         <Banner />
         <Skills />
         
-
-
+        <JobReq />
 
         <Footer />
     </div>

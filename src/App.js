@@ -8,6 +8,7 @@ import Profile from "./components/profile/profile"
 import Contact from "./components/contact/contact";
 import Handy from "./components/handylanding/handylanding"
 
+
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 

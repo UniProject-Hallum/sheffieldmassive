@@ -6,11 +6,11 @@ const banner = () => {
     return (
 
 <div className='bg-[#ceeaf2] p-5 sm:mt-7'> 
-<h2 className='flex flex-wrap items-center md:text-6xl md:font-medium ml-96'> 
+<h2 className='flex flex-wrap items-center justify-center md:text-6xl md:font-medium'> 
 
 Welcome Back! 
 
-<img className='w-2/12 rounded-2x1 ml-96' src={handyman} alt="logo" /></h2>
+<img className='w-2/12 rounded-2x1 ml-20' src={handyman} alt="logo" /></h2>
 
 </div>
   )
