@@ -1,0 +1,10 @@
+POST http://localhost:5000/api
+Content-Type: application/json
+
+{
+    "fullName":"Ahmed Elzenaria",
+    "email":"ahmed.elzenaraa123a@handyman.com",
+    "password":"ahmed",
+    "type":"customer",
+    "desc ription":""
+}   
