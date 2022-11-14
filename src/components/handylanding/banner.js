@@ -11,9 +11,11 @@ const banner = () => {
 Welcome Back! 
 
 <img className='w-2/12 rounded-2x1 ml-20' src={handyman} alt="logo" /></h2>
-
 </div>
+
   )
 }
+
+
 
 export default banner
