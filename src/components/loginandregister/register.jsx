@@ -12,7 +12,7 @@ const login2 = () => {
             </div>
             <div className='md:w-1/2 px-16'>
                 <h2 className='font-bold text-2xl text-[#606060]'>Register</h2>
-                <p className='text-sm mt-4 text-[#606060]'>You aren't a memeber, easily register</p>
+                <p className='text-sm mt-4 text-[#606060]'>Register now for access to our wide range of handymen</p>
 
                 <form action="" className='flex flex-col gap-4'>
                     <input className='p-2 mt-8 rounded-xl border' type="test" name='name' placeholder='Full Name' />
@@ -33,7 +33,7 @@ const login2 = () => {
                         </div>
                         <div className="flex items-center mr-4">
                             <input  id="inline-radio" type="radio" value="" name="inline-radio-group" class="w-4 h-4  bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                            <label for="inline-radio" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">HandyMan</label>
+                            <label for="inline-radio" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">Handyman</label>
                         </div>
                     </div>
                     
@@ -46,7 +46,7 @@ const login2 = () => {
                     <hr className='border-gray-500' />
                 </div>
                 <div className='mt-7 mb-4 text-xs flex justify-between items-center'>
-                    <p>If you have an account.. </p>
+                    <p>Already have an account?</p>
                     <a href="/login"><button className='text-white py-2 bg-[#606060] px-5 border rounded-xl  hover:bg-[#fccc35] hover:scale-110'>Login</button></a>
                 </div>
                 

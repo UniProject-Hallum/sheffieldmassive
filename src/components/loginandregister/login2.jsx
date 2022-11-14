@@ -8,7 +8,7 @@ const login2 = () => {
         <div className='bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5'>
             <div className='md:w-1/2 px-16'>
                 <h2 className='font-bold text-2xl text-[#606060]'>Login</h2>
-                <p className='text-sm mt-4 text-[#606060]'> If you already a memeber, easily login</p>
+                <p className='text-sm mt-4 text-[#606060]'> Log in with your details if you are already a member</p>
 
                 <form action="" className='flex flex-col gap-4'>
                     <input className='p-2 mt-8 rounded-xl border' type="email" name='email' placeholder='Email' />
@@ -28,7 +28,7 @@ const login2 = () => {
                     <hr className='border-gray-500' />
                 </div>
                 <div className='mt-7 mb-4 text-xs flex justify-between items-center'>
-                    <p>Don't have an account.. </p>
+                    <p>Don't have an account? </p>
                     <a href="/register"><button className='text-white py-2 bg-[#606060] px-5 border rounded-xl  hover:bg-[#fccc35] hover:scale-110'>Register</button></a>
                 </div>
                 
