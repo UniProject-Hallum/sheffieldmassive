@@ -15,8 +15,12 @@ const userRegistration =async (req, res) => {
 
         console.log('this is the request body ' + email+" " + username +" "+ password);
 
-        
         const emailCheck = await userModel.findOne({"email":email});
+
+        const userInfo = {
+            description: '',
+            skills: [],
+        };
 
 
         if(emailCheck){
@@ -26,7 +30,7 @@ const userRegistration =async (req, res) => {
         else{
             //encrypt password 
             const hashedPassword = await bcryppt.hash(password,10);
-            const newUser = new userModel({email:email,username:username,password:hashedPassword,role:role});
+            const newUser = new userModel({email:email,username:username,password:hashedPassword,role:role,userInfo});
             await newUser.save();
             // newItem.save();
             ;
@@ -36,6 +40,7 @@ const userRegistration =async (req, res) => {
                     id:idInserted,
                     email,
                     username,
+                    userInfo,
                     role,
                 },
                 process.env.JWT_SECRET,{

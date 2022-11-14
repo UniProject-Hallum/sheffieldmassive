@@ -18,6 +18,7 @@ const userLogin  =async (req, res) => {
         const username= user.username;
         const userRole= user.role;
         const userId = user._id;
+        const userInfo= user.userInfo
 
         const passwordIsSame= await bcryppt.compare(password,userPassword);
 
@@ -30,18 +31,11 @@ const userLogin  =async (req, res) => {
             try {
                 const maxAge = 60*60*3;
                 const token = jwt.sign({
-                    userId,email,username,userRole
+                    userId,email,username,userRole,userInfo
                 },process.env.JWT_SECRET,
                 {
                     expiresIn: maxAge,
-                })
-
-                // res.cookie("jwt", token, {
-                //     httpOnly: true,
-                //     maxAge: maxAge * 1000, // 3hrs in ms
-                // }); 
-                
-                
+                })            
                 console.log(token)
                 return res.json(token);
 

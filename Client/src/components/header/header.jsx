@@ -19,7 +19,6 @@ function Header() {
       isLoggedIn = true;
     }
   
-
     return (
       <header>
           <div className="sm:flex justify-between item-center text-center w-full sm:px-20 mt-4">

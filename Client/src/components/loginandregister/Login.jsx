@@ -14,10 +14,8 @@ const Login = () => {
     const navigate = useNavigate();
 
     const OnClickLogin = async () => {
-        try {
-            let proceed;
+        try {        
             let itoken;
-            let a;
             const response = await axios.post(baseurl+'/api/login', {
                 email:emailValue,
                 password: passwordValue })
@@ -29,11 +27,9 @@ const Login = () => {
             
         } catch (e) {
             setErrorMessage(e.response.data.message)
-            console.error('There was an error!', e.response.data.message);
-            
+            console.error('There was an error!', e.response.data.message);          
         }
-
-    
+  
       };
 
   return (
@@ -57,9 +53,7 @@ const Login = () => {
                     {(!emailValue || !passwordValue)  
                         ?   <button disabled className='bg-[#606060] rounded-xl text-white py-2 '>Login</button>
 
-                           : <button onClick={OnClickLogin} className=' py-2 rounded-xl bg-yellow-500 hover:bg-[#ca9f16]  hover:scale-110'>Login</button>
-                    
-                    
+                        : <button onClick={OnClickLogin} className=' py-2 rounded-xl bg-yellow-500 hover:bg-[#ca9f16]  hover:scale-110'>Login</button>
                     }
                     
                 </div>
