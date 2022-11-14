@@ -13,28 +13,23 @@ const userRegistration =async (req, res) => {
         
         const {email,username,password,role}= req.body;
 
-        console.log(req.body);
         console.log('this is the request body ' + email+" " + username +" "+ password);
 
         
         const emailCheck = await userModel.findOne({"email":email});
-        const usernameCheck = await userModel.findOne({"username":username});
 
 
         if(emailCheck){
             console.log("This Email is already in Use")
-            res.status(409).send("This Email is already in Use");
-        }else if(usernameCheck){
-            console.log("This username is already in Use")
-            res.status(409).send("This username is already in Use");
-
-        } else{
+            return res.status(500).json({message:"This Email is already in Use"});
+        }
+        else{
             //encrypt password 
             const hashedPassword = await bcryppt.hash(password,10);
             const newUser = new userModel({email:email,username:username,password:hashedPassword,role:role});
             await newUser.save();
             // newItem.save();
-            console.log('REGISTERED: '+ newUser) ;
+            ;
             const idInserted = newUser._id;
             const maxAge = 60*60*3;
             const token = jwt.sign({
@@ -47,21 +42,20 @@ const userRegistration =async (req, res) => {
                     expiresIn:maxAge,
             });
             
-            res.cookie("jwt", token, {
-                httpOnly: true,
-                maxAge: maxAge * 1000, // 3hrs in ms
-            }); 
 
-           newUser.token = token;            
-           return res.status(201).json({
-            message: "User successfully created",
-            user: newUser._id,
-          });             
-        }
-        
+            
+           newUser.token = token; 
+           
+           console.log('REGISTERED: '+ newUser) 
+           
+           console.log("token: "+token) 
+          
+
+           return res.status(201).json(token);             
+        }      
     }catch (err) {
-        console.log(err);
-        return res.status(500).send(err);
+        console.log("there was an error");
+        return res.status(400).send(err);
     }
 
 };

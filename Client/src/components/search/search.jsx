@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const search = () => {
   return (
     <div>
@@ -10,8 +11,8 @@ const search = () => {
                 <form action="" className='w-full'>
                     <div className='sm:flex item-center justify-center mb-4'>
                         <select name="" id="" className='p-2 rounded-xl text-center w-full sm:mb-0 mb-3 bg-[#cccccc] border hover:border-[#606060]'>
-                            <option selected="true" disabled="disabled">What service would you like?</option>
-                            <option value="">Electrical services</option>
+                            <option value=""  >What service would you like?</option>
+                            <option value="" >Electrical services</option>
                             <option value="">Plumbing</option>
                             <option value="">Kitchen renovation</option>
                             <option value="">Window cleaner</option>
@@ -19,7 +20,7 @@ const search = () => {
                             <option value="">Painting</option>
                         </select>
                         <select name="" id="" className='p-2 rounded-xl text-center w-full bg-[#cccccc] sm:ml-4 sm:mb-0 mb-3 border hover:border-[#606060]'>
-                            <option selected="true" disabled="disabled">Location</option>
+                            <option selected={true} disabled="disabled">Location</option>
                             <option value="">South East England</option>
                             <option value="">South West England</option>
                             <option value="">East of England</option>
@@ -29,7 +30,7 @@ const search = () => {
                             <option value="">North West</option>
                         </select>
                         <select name="" id="" className='p-2 rounded-xl text-center w-full bg-[#cccccc] sm:ml-4 border hover:border-[#606060]'>
-                            <option selected="true" disabled="disabled">Max price</option>
+                            <option selected={true} disabled="disabled">Max price</option>
                             <option value="">£30-50 p/h</option>
                             <option value="">£50-75 p/h</option>
                             <option value="">£75-100 p/h</option>

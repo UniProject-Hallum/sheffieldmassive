@@ -1,11 +1,11 @@
-//import ReactDOM from "react-dom";
-import Login from "./components/loginandregister/login2";
-import Register from "./components/loginandregister/register";
+import Login from "./components/loginandregister/Login";
+import Register from "./components/loginandregister/Register";
 import Home from './components/landingpage/landing';
-import Header from "./components/header/header";
+import Header from "./components/header/Header";
 import Search from "./components/searchresults/results";
 import Profile from "./components/profile/profile"
 import Contact from "./components/contact/contact";
+import PrivateRoutes from "./auth/PrivateRoutes";
 
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
@@ -15,11 +15,16 @@ function App() {
     <Router>
       <Routes>
           <Route exact path='/'  element={<Home />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<Register/>} />
           <Route path='/search' element={<Search/>} />
-          <Route path='/profile' element={<Profile/>} />
           <Route path='/contact' element={<Contact/>} />
+
+          <Route element= {<PrivateRoutes/>}>
+               <Route exact path='/profile' element={<Profile/>} />
+          </Route>
+          
+          
       </Routes>
     </Router>
   );

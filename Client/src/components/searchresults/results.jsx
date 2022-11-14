@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../header/header'
+import Header from '../header/Header'
 import Search from '../search/search'
 import Footer from '../footer/footer'
 import handyman from '../../assets/3.jpg'
