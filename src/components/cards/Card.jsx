@@ -2,7 +2,7 @@ import React from 'react'
 
 const Card = () => {
   return (
-    <div className="p-7 space-x-5 flex item-center justify-center">
+    <div className="container-mx-auto p-7 space-x-5 flex item-center justify-center ">
     <div class=" p-2 bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 bg-white-500">
 <img src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80" class="" />
 <div class="flex justify-center -mt-8">
