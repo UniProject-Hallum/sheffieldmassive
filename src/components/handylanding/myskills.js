@@ -25,7 +25,7 @@ const skills = () => {
             closeOnDocumentClick
             mouseLeaveDelay={300}
             mouseEnterDelay={0}
-            contentStyle={{ padding: '0px', border: '' }}
+            contentStyle={{ padding: '0px', border: '' }} vvv
             arrow={false}
             position="left"
             > 
