@@ -2,12 +2,20 @@ import React from 'react'
 
 const jobrequests = () => {
     return (
+        <div className="">
+        <div className='font-bold ml-24 mb-10'>Job Requests</div>
         
-        <h2 className='font-bold ml-24'>Job Requests</h2>
+        <div className='bg-[#fff] rounded-2xl shadow-xl p-16 z-10 mt-4 mx-20'>
+            electrical work 
 
+        </div>
+        
+        </div>
 
         
-    )        
+        
+
+    )       
 }
 
 export default jobrequests

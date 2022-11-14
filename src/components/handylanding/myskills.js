@@ -8,12 +8,13 @@ import general from '../../assets/general-repairs.png'
 import painting from '../../assets/painting.png'
 import electric from '../../assets/electric.png'
 import Popup from 'reactjs-popup'
+import Checkbox from '@mui/material/Checkbox'
 
 
 const skills = () => {
     return (
         
-    <div className='sm:flex pt-5 pr-20 justify-center'> 
+    <div className='sm:flex pt-5 pr-20 justify-center mb-10'> 
         <h2 className='font-bold pr-20'>My Skills</h2>
         <img className='w-1/12' src={bathroom} alt="bathroom" />
         <img className='w-1/12' src={cleaning} alt="cleaning" />
@@ -29,20 +30,19 @@ const skills = () => {
             arrow={false}
             position="left"
             > 
-            <section className="grid grid-cols-1 gap-4 lg:grid-cols-3 sm:grid-cols-2 bg-white">
-            
-                <img className='object-cover border w-1/12' src={bathroom} alt="bathroom" />
-                <img className='object-cover border w-1/12' src={cleaning} alt="cleaning" />
-                <img className='object-cover border w-1/12' src={plumbing} alt="plumbing" />
-                <img className='object-cover border w-1/12' src={tiling} alt="tiling" />
-                <img className='object-cover border w-1/12' src={electric} alt="electric" />
-                <img className='object-cover border w-1/12' src={general} alt="general" />
-                <img className='object-cover border w-1/12' src={woodwork} alt="woodwork" />
-            
-                <img className='object-cover border w-1/12' src={painting} alt="painting" /><label className="container">Painting
-                <input type="checkbox" checked="checked"></input>
-                <span class="checkmark"></span>
-                </label>
+            <section className="w-full max-w-sm rounded bg-white m-auto shadow h-36 flex flex-row">
+                <div className="">
+                <img className='object-cover border ' src={bathroom} alt="bathroom" /><ControlledCheckbox/>
+                </div>
+
+                <img className='object-cover border ' src={cleaning} alt="cleaning" />
+                <img className='object-cover border ' src={plumbing} alt="plumbing" />
+                <img className='object-cover border ' src={tiling} alt="tiling" />
+                <img className='object-cover border ' src={electric} alt="electric" />
+                <img className='object-cover border ' src={general} alt="general" />
+                <img className='object-cover border ' src={woodwork} alt="woodwork" /> 
+                <img className='object-cover border ' src={painting} alt="painting" />
+                
            
           
            </section>
@@ -51,8 +51,26 @@ const skills = () => {
     </div>
 
 
-        
     )        
 }
 
 export default skills
+
+//checkbox function
+function ControlledCheckbox() {
+    const [checked, setChecked] = React.useState(true);
+  
+    const handleChange = (event) => {
+      setChecked(event.target.checked);
+    }
+  
+    return (
+      <Checkbox
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ 'aria-label': 'controlled' }}
+      />
+    )
+  };
+  
+
