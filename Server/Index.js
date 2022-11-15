@@ -1,4 +1,4 @@
-import dbConn from "./config/Dbconn.js";
+import dbConn from "./database/Dbconn.js";
 import app from "./routes/routes.js";
 import dotenv from 'dotenv';
 

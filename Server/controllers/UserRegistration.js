@@ -6,21 +6,18 @@ import mongoose from "mongoose";
 
 
 
-const userRegistration =async (req, res) => {
+const UserRegistration =async (req, res) => {
 
     try {
         res.set('Access-Control-Allow-Origin', 'http://localhost:3000');
         
-        const {email,username,password,role}= req.body;
+        const {email,username,password,role,userInfo}= req.body;
 
         console.log('this is the request body ' + email+" " + username +" "+ password);
 
         const emailCheck = await userModel.findOne({"email":email});
 
-        const userInfo = {
-            description: '',
-            skills: [],
-        };
+        
 
 
         if(emailCheck){
@@ -40,8 +37,8 @@ const userRegistration =async (req, res) => {
                     id:idInserted,
                     email,
                     username,
-                    userInfo,
                     role,
+                    userInfo,
                 },
                 process.env.JWT_SECRET,{
                     expiresIn:maxAge,
@@ -49,7 +46,7 @@ const userRegistration =async (req, res) => {
             
 
             
-           newUser.token = token; 
+        //    newUser.token = token; 
            
            console.log('REGISTERED: '+ newUser) 
            
@@ -68,4 +65,4 @@ const userRegistration =async (req, res) => {
 
 
 
-export default userRegistration;
+export default UserRegistration;

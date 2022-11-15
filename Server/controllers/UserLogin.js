@@ -3,17 +3,18 @@ import userModel from "../models/UserModel.js";
 import bcryppt from 'bcrypt';
 
 
-const userLogin  =async (req, res) => {
+const UserLogin  =async (req, res) => {
 
     const {email,password}= req.body;
 
-    console.log('this is the request body ' + email + password);
-    //find if email exists
+    
     const user = await userModel.findOne({"email":email});
-    if(!user){
-        return res.status(401).send("Error with password or username please try again")
+    
+    if(user == null){
+        console.log('this is the request body ' + user);
+        return res.status(500).json({message:"Error with password or username please try again"})
     }else{
-        console.log("user item:    "+  user)
+        
         const userPassword= user.password;
         const username= user.username;
         const userRole= user.role;
@@ -23,12 +24,13 @@ const userLogin  =async (req, res) => {
         const passwordIsSame= await bcryppt.compare(password,userPassword);
 
         if(!passwordIsSame){
-            console.log("Incorrect password")
-            return res.status(500).json({message:"Incorrect password"});
+        
+            return res.status(500).json({message:"Error with password or username please try again"});
         }
 
         if(passwordIsSame){
             try {
+                console.log("user item:    "+  user)
                 const maxAge = 60*60*3;
                 const token = jwt.sign({
                     userId,email,username,userRole,userInfo
@@ -48,4 +50,4 @@ const userLogin  =async (req, res) => {
     }
 }
 
-export default userLogin;
+export default UserLogin;

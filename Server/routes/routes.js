@@ -1,8 +1,9 @@
 import express from 'express';
-import userLogin from '../controllers/userLogin.js';
-import userRegistration from '../controllers/userRegistration.js';
+import userLogin from '../controllers/UserLogin.js';
+import userRegistration from '../controllers/UserRegistration.js';
 import cookieParser from "cookie-parser"
-import {handyAuth, customerAuth} from "../middleware/auth.js"
+import { GetAllUsers } from '../controllers/UserController.js';
+// import {handyAuth, customerAuth} from "../middleware/auth.js"
 
 import cors from 'cors';
 
@@ -18,8 +19,13 @@ app.use(cookieParser());
 app.post('/api/login',userLogin);
 app.post('/api/register',userRegistration);
 
-app.get("/handy", handyAuth, (req, res) => res.send("Admin Route"));
-app.get("/customer", customerAuth, (req, res) => res.send("User Route"));
+
+
+// app.get('/getUser/:ID',getUsers);
+app.get('/users', GetAllUsers)
+
+// app.get("/handy", handyAuth, (req, res) => res.send("Admin Route"));
+// app.get("/customer", customerAuth, (req, res) => res.send("User Route"));
 
 app.get('/', (req, res) => {
     res.json({message:'Hello World!'})
