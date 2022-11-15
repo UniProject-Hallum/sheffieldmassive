@@ -9,6 +9,8 @@ import painting from '../../assets/painting.png'
 import electric from '../../assets/electric.png'
 import Popup from 'reactjs-popup'
 import Checkbox from '@mui/material/Checkbox'
+import { MuiCheckbox } from './checkbox';
+
 
 
 const skills = () => {
@@ -32,16 +34,17 @@ const skills = () => {
             > 
             <section className="w-full max-w-sm rounded bg-white m-auto shadow h-36 flex flex-row">
                 <div className="">
-                <img className='object-cover border ' src={bathroom} alt="bathroom" /><ControlledCheckbox/>
+                <MuiCheckbox/>
+                <img className='object-cover border-4 ' src={bathroom} alt="bathroom" />
                 </div>
 
-                <img className='object-cover border ' src={cleaning} alt="cleaning" />
-                <img className='object-cover border ' src={plumbing} alt="plumbing" />
-                <img className='object-cover border ' src={tiling} alt="tiling" />
-                <img className='object-cover border ' src={electric} alt="electric" />
-                <img className='object-cover border ' src={general} alt="general" />
-                <img className='object-cover border ' src={woodwork} alt="woodwork" /> 
-                <img className='object-cover border ' src={painting} alt="painting" />
+                <img className='object-cover border-4 ' src={cleaning} alt="cleaning" />
+                <img className='object-cover border-4 ' src={plumbing} alt="plumbing" />
+                <img className='object-cover border-4 ' src={tiling} alt="tiling" />
+                <img className='object-cover border-4 ' src={electric} alt="electric" />
+                <img className='object-cover border-4 ' src={general} alt="general" />
+                <img className='object-cover border-4 ' src={woodwork} alt="woodwork" /> 
+                <img className='object-cover border-4 ' src={painting} alt="painting" />
                 
            
           
@@ -56,7 +59,7 @@ const skills = () => {
 
 export default skills
 
-//checkbox function
+//checkbox function inside popup
 function ControlledCheckbox() {
     const [checked, setChecked] = React.useState(true);
   
@@ -72,5 +75,6 @@ function ControlledCheckbox() {
       />
     )
   };
-  
+
+
 
