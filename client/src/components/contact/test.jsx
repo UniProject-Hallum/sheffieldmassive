@@ -2,21 +2,22 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm('service_aphoqd5', 'template_2ehnqxx', form.current, 'B4QnZ1WuaIAGFwgp_')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-  };
-
-  return (
-    <div className='w-full h-screen grid place-items-center  text-[#606060]'>
+    const form = useRef();
+  
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_aphoqd5', 'template_2ehnqxx', form.current, 'B4QnZ1WuaIAGFwgp_')
+        .then((result) => {
+            console.log(result.text);
+            console.log("message sent")
+        }, (error) => {
+            console.log(error.text);
+        });
+    };
+  
+    return (
+        <div className='w-full h-screen grid place-items-center  text-[#606060]'>
         <div className='bg-white rounded-md shadow-md flex flex-row'>
             <div className='h-96 w-96 bg-[#ceeaf2] p-8 md:hover:scale-y-110 rounded-md transition md:block hidden' id='contact_info'>
                 <div className='flex justify-between'>
@@ -58,12 +59,7 @@ export const Contact = () => {
                 <div className='flex justify-between'>
                     <h2 className='text-xl'>Get In Touch</h2>
                 </div>
-            
-
-
-                <form  ref={form} onSubmit={sendEmail}>
-                <input type="hidden" placeholder='send email to' name="to_email"
-                        className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>
+                <form action="" ref={{form}} onSubmit={sendEmail}>
                     <input type="text" placeholder='Enter your Name' name="from_name"
                         className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>
                     <input type="text" placeholder='Enter your Email' name="from_email"
@@ -79,7 +75,8 @@ export const Contact = () => {
         </div>
 
     </div>
-  );
-};
+    );
+  };
+
 
 export default Contact
