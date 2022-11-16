@@ -40,14 +40,12 @@ const Register = () => {
       function handleSelectCity(data) { 
         setSelectedCity(data);
       }
-      
+
     const OnClickSignup = async () => {
     try {
         let itoken;
-        
         let values= [];
         selectedOptions.forEach(obj => { values.push(obj['value']) })
-        
        let userinfo = {
             description: descriptionValue,
             gender: genderValue,
@@ -66,7 +64,13 @@ const Register = () => {
         itoken = response.data;
         console.log(itoken)
         setToken(itoken);
-        navigate("/profile");       
+
+        if(roleValue=="handyman"){
+            navigate("/handyman"); 
+        }else{
+            navigate("/profile");    
+        }
+              
     }
     catch(e) 
     {

@@ -21,10 +21,11 @@ function App() {
           <Route path='/register' element={<Register/>} />
           <Route path='/search' element={<Search/>} />
           <Route path='/contact' element={<Contact/>} />
+          <Route exact path='/profile' element={<Profile/>} />
           <Route element= {<PrivateRoutes/>}>
-               <Route exact path='/profile' element={<Profile/>} />
+            <Route path='/handyman' element={<Handy/>} />
           </Route>
-          <Route path='/handyman' element={<Handy/>} />
+          
       </Routes>
     </Router>
   );
