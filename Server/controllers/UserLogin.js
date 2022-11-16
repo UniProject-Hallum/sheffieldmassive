@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import userModel from "../models/UserModel.js";
-import bcryppt from 'bcrypt';
+import bcrypt from 'bcrypt';
 
 
 const UserLogin  =async (req, res) => {
@@ -21,7 +21,7 @@ const UserLogin  =async (req, res) => {
         const userId = user._id;
         const userInfo= user.userInfo
 
-        const passwordIsSame= await bcryppt.compare(password,userPassword);
+        const passwordIsSame= await bcrypt.compare(password,userPassword);
 
         if(!passwordIsSame){
         

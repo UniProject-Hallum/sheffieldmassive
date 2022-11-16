@@ -4,7 +4,6 @@ import useToken from '../../auth/useToken';
 import handyman from '../../assets/2.png'
 import axios from 'axios'
 import Select from "react-select";
-import AsyncSelect from "react-select/async"
 import { getSkills,getCities } from '../../staticData/Data';
 import search from '../search/search';
 
