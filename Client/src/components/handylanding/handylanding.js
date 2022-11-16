@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../header/header'
+import Header from '../header/Header'
 import Skills from '../handylanding/myskills'
 import Banner from '../handylanding/banner'
 import JobReq from "../handylanding/jobrequest"
