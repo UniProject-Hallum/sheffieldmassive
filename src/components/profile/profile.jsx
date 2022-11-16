@@ -57,38 +57,41 @@ const profile = () => {
                         <p className='rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2'>£30 ph</p>
                         <p className='rounded-lg w-1/5 bg-none shadow-xl pl-2 py-2'>4 stars +</p>
                     </div>
-                    <h4 className='font-bold text-2xl md:font-medium  md:leading-relaxed mt-4 mb-5'>Completed projects</h4>
-                    <div className='mx-auto columns-2'>
-                    <img className='mb-10 h-96' src={handyman} alt=''></img>
-                    <img className='mb-10 h-96' src={handyman} alt=''></img>
-                    </div>
-                    <div class='container mx-auto columns-3'>
-                    <img className='' src={handyman} alt=''></img>
-                    <img className='' src={handyman} alt=''></img>
-                    <img className='' src={handyman} alt=''></img>
-                    </div>
-                </div>
-            </div>
-            <div class='h-auto w-4/5 item-center justify-center mt-7 columns-2 mx-auto '>
-            
-            <div>
-            <h4 className='font-bold text-3xl md:font-medium md:leading-relaxed mt-2 mb-4'>Description</h4>
-            
-            <p1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, ad? Laborum eum et perspiciatis exercitationem, officiis quia eveniet, natus aspernatur odit, iure neque. Optio iste, perspiciatis accusantium doloribus architecto nostrum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique deserunt dolores earum. Itaque ea voluptas beatae ex amet a nihil accusamus repellendus veniam quas! Possimus pariatur vel facilis quas maiores!</p1>
-            </div>
+                    <h4 className='font-bold text-2xl md:font-medium  md:leading-relaxed mt-7 mb-7'>Completed projects</h4>
+                    <div className='grid grid-rows-2 grid-cols-4 gap-4 '>
+                    <img className='rounded-lg row-span-2 col-span-2' src={handyman} alt=''></img>
+                    <img className='rounded-lg' src={handyman} alt=''></img>
+                    <img className='rounded-lg' src={handyman} alt=''></img>
+                    <img className='rounded-lg' src={handyman} alt=''></img>
+                    <img className='rounded-lg' src={handyman} alt=''></img>
+                     </div>
 
-            <div className='py-8 flex-col'>
-            
-            <h4 className='font-bold text-3xl md:font-medium md:leading-relaxed mt-2 mb-4 '>Location</h4>
-            <p1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto at adipisci aspernatur, autem officia dolores voluptatem iure neque recusandae similique hic aliquam itaque repellat esse. Voluptatem itaque laboriosam accusamus. Eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolorum at numquam cum illo sint sit id similique quo fugit, harum ut tempora vel modi quod explicabo itaque ratione! Voluptates!</p1>
-            <img className='h-auto w-4/5 py-8 flex p-7 pl-20' src='https://images.unsplash.com/photo-1538514860079-8443cff3cb21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGxvY2F0aW9uJTIwbWFwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60' alt=''></img>
-            
-            </div>
-            </div>
-            <div className='mx-auto w-4/5'>
-            <a href=""><button className='py-2 bg-[#ceeaf2] px-5 border rounded-xl  hover:bg-[#fccc35] hover:scale-110'>Contact</button></a>
-            </div>
-        </div>
+<div class='columns-2 py-7 mt-5'>
+                     <div class='col-span-1 container-mx-auto'>
+                        <h1 class='flex grow text-2xl font-semibold py-5'>Location</h1>
+                        <p class='text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, iste optio. Id, nihil reiciendis provident pariatur nemo perferendis et vel eaque voluptatem quaerat ad sint commodi modi tenetur iste maxime! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima quod ipsam reprehenderit natus quas necessitatibus, quia alias architecto, in doloribus facere ullam, officia quidem eveniet esse commodi. Nulla, similique sunt.</p>
+                     </div>
+
+                     <div class='col-span-1 container-mx-auto'>
+                        <h1 class='flex grow text-2xl font-semibold py-5'>Description</h1>
+                        <p class='text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor inventore culpa officia voluptatem. Labore ea facere nisi, quae perferendis reprehenderit aliquid nostrum aperiam ipsa, modi mollitia quis exercitationem omnis sequi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut dolorem saepe ipsa numquam obcaecati unde iste cupiditate debitis consequatur? Quibusdam asperiores unde debitis laudantium, ipsum ut. Voluptatem sint laboriosam animi? lo</p>
+                        
+                     </div> 
+                     
+                     </div>
+                     <div class='container-mx-auto place-item-center'>
+                     <img class='rounded-lg h-1/2 w-1/2 item-center justify-center' src='https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2531&q=80' alt=''></img>
+                     <p1 class=''>rgrjgnf</p1>
+                     </div>
+
+             
+
+                </div>      
+                </div>
+         </div>
+        
+
+
         <Footer />
     </div>
   )
