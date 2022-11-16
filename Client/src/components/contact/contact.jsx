@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
-const contact = () => {
+export const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_aphoqd5', 'template_2ehnqxx', form.current, 'B4QnZ1WuaIAGFwgp_')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
   return (
     <div className='w-full h-screen grid place-items-center  text-[#606060]'>
         <div className='bg-white rounded-md shadow-md flex flex-row'>
@@ -44,23 +58,28 @@ const contact = () => {
                 <div className='flex justify-between'>
                     <h2 className='text-xl'>Get In Touch</h2>
                 </div>
-                <form action="">
-                    <input type="text" placeholder='Enter your Name' 
+            
+
+
+                <form  ref={form} onSubmit={sendEmail}>
+                <input type="hidden" placeholder='send email to' name="to_email"
                         className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>
-                    <input type="text" placeholder='Enter your Email' 
+                    <input type="text" placeholder='Enter your Name' name="from_name"
                         className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>
-                    <input type="text" placeholder='Subject' 
+                    <input type="text" placeholder='Enter your Email' name="from_email"
                         className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>
-                    <textarea type="text" placeholder='Enter Your Message Here' 
+                    <input type="text" placeholder='Subject' name="subject"
+                        className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>
+                    <textarea type="text" name="message" placeholder='Enter Your Message Here' 
                         className='w-full text-xs px-3 h-28 my-2 outline-none rounded-md border focus:shadow-sm resize-none'></textarea><br/>
-                    <button className='bg-[#606060] rounded-md text-xs text-white px-4 py-2 cursor-pointer hover:bg-[#fccc35] hover:scale-110'>Send</button>
+                    <button type='submit'  value="Send" className='bg-[#606060] rounded-md text-xs text-white px-4 py-2 cursor-pointer hover:bg-[#fccc35] hover:scale-110'>Send</button>
                 </form>
             </div>
 
         </div>
 
     </div>
-  )
-}
+  );
+};
 
-export default contact
+export default Contact
