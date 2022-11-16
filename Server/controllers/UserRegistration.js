@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import userModel from "../models/UserModel.js";
-import bcryppt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
 import mongoose from "mongoose";
 
@@ -26,7 +26,7 @@ const UserRegistration =async (req, res) => {
         }
         else{
             //encrypt password 
-            const hashedPassword = await bcryppt.hash(password,10);
+            const hashedPassword = await bcrypt.hash(password,10);
             const newUser = new userModel({email:email,username:username,password:hashedPassword,role:role,userInfo});
             await newUser.save();
             // newItem.save();
