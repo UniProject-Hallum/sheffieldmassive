@@ -6,6 +6,8 @@ import Search from "./components/searchresults/results";
 import Profile from "./components/profile/profile"
 import Contact from "./components/contact/contact";
 import PrivateRoutes from "./auth/PrivateRoutes";
+import Handy from "./components/handylanding/handylanding"
+
 
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
@@ -19,12 +21,10 @@ function App() {
           <Route path='/register' element={<Register/>} />
           <Route path='/search' element={<Search/>} />
           <Route path='/contact' element={<Contact/>} />
-
           <Route element= {<PrivateRoutes/>}>
                <Route exact path='/profile' element={<Profile/>} />
           </Route>
-          
-          
+          <Route path='/handyman' element={<Handy/>} />
       </Routes>
     </Router>
   );
