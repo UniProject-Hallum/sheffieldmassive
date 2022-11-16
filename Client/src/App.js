@@ -22,9 +22,9 @@ function App() {
           <Route path='/search' element={<Search/>} />
           <Route path='/contact' element={<Contact/>} />
           <Route exact path='/profile' element={<Profile/>} />
-          <Route element= {<PrivateRoutes/>}>
+          {/* <Route element= {<PrivateRoutes/>}> */}
             <Route path='/handyman' element={<Handy/>} />
-          </Route>
+          {/* </Route> */}
           
       </Routes>
     </Router>
