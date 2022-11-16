@@ -25,21 +25,7 @@ const profile = () => {
                         <h4 className='md:text-1xl text-1xl md:font-medium  md:leading-relaxed text-[#606060] mt-2 mb-2'> Manchester, Greater Manchester, UK</h4>
                         <p>Ipsum pulvinar enim ad quam a eget per varius ante. Magna aptent suscipit nostra enim pulvinar semper. Est, sollicitudin metus montes faucibus eleifend. Faucibus ipsum sagittis libero ligula justo ullamcorper urna id faucibus fames odio consequat. <a href="/profile"><span className='text-[#000000] hover:text-[#fccc35]'></span></a></p>
                         <div className='flex text-yellow-400 mt-5'>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                            <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                            <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                            <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                            <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                            </svg>
+                           
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="black" class="w-6 h-6">
                             <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
                             </svg>
@@ -72,38 +58,41 @@ const profile = () => {
                         <p className='rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2'>£30 ph</p>
                         <p className='rounded-lg w-1/5 bg-none shadow-xl pl-2 py-2'>4 stars +</p>
                     </div>
-                    <h4 className='font-bold text-2xl md:font-medium  md:leading-relaxed mt-4 mb-5'>Completed projects</h4>
-                    <div className='mx-auto columns-2'>
-                    <img className='mb-10 h-96' src={handyman} alt=''></img>
-                    <img className='mb-10 h-96' src={handyman} alt=''></img>
-                    </div>
-                    <div class='container mx-auto columns-3'>
-                    <img className='' src={handyman} alt=''></img>
-                    <img className='' src={handyman} alt=''></img>
-                    <img className='' src={handyman} alt=''></img>
-                    </div>
-                </div>
-            </div>
-            <div class='h-auto w-4/5 item-center justify-center mt-7 columns-2 mx-auto '>
-            
-            <div>
-            <h4 className='font-bold text-3xl md:font-medium md:leading-relaxed mt-2 mb-4'>Description</h4>
-            
-            <p1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, ad? Laborum eum et perspiciatis exercitationem, officiis quia eveniet, natus aspernatur odit, iure neque. Optio iste, perspiciatis accusantium doloribus architecto nostrum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique deserunt dolores earum. Itaque ea voluptas beatae ex amet a nihil accusamus repellendus veniam quas! Possimus pariatur vel facilis quas maiores!</p1>
-            </div>
+                    <h4 className='font-bold text-2xl md:font-medium  md:leading-relaxed mt-7 mb-7'>Completed projects</h4>
+                    <div className='grid grid-rows-2 grid-cols-4 gap-4 '>
+                    <img className='rounded-lg row-span-2 col-span-2' src={handyman} alt=''></img>
+                    <img className='rounded-lg' src={handyman} alt=''></img>
+                    <img className='rounded-lg' src={handyman} alt=''></img>
+                    <img className='rounded-lg' src={handyman} alt=''></img>
+                    <img className='rounded-lg' src={handyman} alt=''></img>
+                     </div>
 
-            <div className='py-8 flex-col'>
-            
-            <h4 className='font-bold text-3xl md:font-medium md:leading-relaxed mt-2 mb-4 '>Location</h4>
-            <p1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto at adipisci aspernatur, autem officia dolores voluptatem iure neque recusandae similique hic aliquam itaque repellat esse. Voluptatem itaque laboriosam accusamus. Eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolorum at numquam cum illo sint sit id similique quo fugit, harum ut tempora vel modi quod explicabo itaque ratione! Voluptates!</p1>
-            <img className='h-auto w-4/5 py-8 flex p-7 pl-20' src='https://images.unsplash.com/photo-1538514860079-8443cff3cb21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGxvY2F0aW9uJTIwbWFwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60' alt=''></img>
-            
-            </div>
-            </div>
-            <div className='mx-auto w-4/5'>
-            <a href=""><button className='py-2 bg-[#ceeaf2] px-5 border rounded-xl  hover:bg-[#fccc35] hover:scale-110'>Contact</button></a>
-            </div>
-        </div>
+<div class='columns-2 py-7 mt-5'>
+                     <div class='col-span-1 container-mx-auto'>
+                        <h1 class='flex grow text-2xl font-semibold py-5'>Location</h1>
+                        <p class='text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, iste optio. Id, nihil reiciendis provident pariatur nemo perferendis et vel eaque voluptatem quaerat ad sint commodi modi tenetur iste maxime! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima quod ipsam reprehenderit natus quas necessitatibus, quia alias architecto, in doloribus facere ullam, officia quidem eveniet esse commodi. Nulla, similique sunt.</p>
+                     </div>
+
+                     <div class='col-span-1 container-mx-auto'>
+                        <h1 class='flex grow text-2xl font-semibold py-5'>Description</h1>
+                        <p class='text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor inventore culpa officia voluptatem. Labore ea facere nisi, quae perferendis reprehenderit aliquid nostrum aperiam ipsa, modi mollitia quis exercitationem omnis sequi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut dolorem saepe ipsa numquam obcaecati unde iste cupiditate debitis consequatur? Quibusdam asperiores unde debitis laudantium, ipsum ut. Voluptatem sint laboriosam animi? lo</p>
+                        
+                     </div> 
+                     
+                     </div>
+                     <div class='container-mx-auto place-item-center'>
+                     <img class='rounded-lg h-1/2 w-1/2 item-center justify-center' src='https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2531&q=80' alt=''></img>
+                     <p1 class=''>rgrjgnf</p1>
+                     </div>
+
+             
+
+                </div>      
+                </div>
+         </div>
+        
+
+
         <Footer />
     </div>
   )

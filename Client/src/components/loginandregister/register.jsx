@@ -117,12 +117,12 @@ const Register = () => {
                                 <p>Please tell us about yourself</p>
                                 <div className='flex mt-5 mb-3'>
                                     <div className="flex items-center mr-4">
-                                        <input required onChange={e => setGenderValue('M')}  id="inline-radio1" type="radio" value="" name="inline-radio-group" className="w-4 h-4 bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label htmlFor="inline-radio1" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">M</label>
+                                        <input required onChange={e => setGenderValue('M')}  id="inline-radio3" type="radio" value="" name="inline-radio-group2" className="w-4 h-4 bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                        <label htmlFor="inline-radio3" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">M</label>
                                     </div>
                                     <div className="flex items-center mr-4">
-                                        <input required onChange={e => setGenderValue('F')}   id="inline-radio2" type="radio" value="" name="inline-radio-group" className="w-4 h-4  bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label htmlFor="inline-radio2" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">F</label>
+                                        <input required onChange={e => setGenderValue('F')}   id="inline-radio4" type="radio" value="" name="inline-radio-group2" className="w-4 h-4  bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                        <label htmlFor="inline-radio4" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">F</label>
                                     </div>
                        
                                 </div>
