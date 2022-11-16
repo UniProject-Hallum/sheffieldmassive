@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import userModel from "../models/UserModel.js";
-import bcryppt from 'bcrypt';
+import bcryppt from 'bcryptjs';
 import crypto from 'crypto';
 import mongoose from "mongoose";
 
