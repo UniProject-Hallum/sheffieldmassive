@@ -44,8 +44,9 @@ const MySkills = () => {
                 <div className=""> <Skills/> </div>
                 
                 
-                
-                {/* <img className='object-cover border-2 ' src={bathroom} alt="bathroom" />
+              
+                {/* images used originally for popup
+                <img className='object-cover border-2 ' src={bathroom} alt="bathroom" />
                 <img className='object-cover border-2 ' src={cleaning} alt="cleaning" />
                 <img className='object-cover border-2 ' src={plumbing} alt="plumbing" />
                 <img className='object-cover border-2 ' src={tiling} alt="tiling" />

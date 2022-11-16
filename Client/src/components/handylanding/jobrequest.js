@@ -6,7 +6,7 @@ const jobrequests = () => {
         <div className="mx-20 py-10 rounded-lg ">
         <div className='font-bold text-3xl ml-24'>Job Requests</div>
         
-        <div className='bg-[#fff] rounded-2xl shadow-xl p-16 z-10 mt-4 mx-40'>
+        <div className='bg-[#fff] rounded-2xl wrap-text shadow-xl p-16 z-10 mt-4 mx-40'>
             requested but unaccepted jobs here, if too much text use the view more button to see full         
         
         <Popup trigger= { <button className='text-black py-1 bg-[#ceeaf2] px-10 ml-12 border rounded-xl hover:bg-[#fccc35] hover:scale-110'>View More</button>
