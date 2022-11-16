@@ -26,6 +26,7 @@ const MySkills = () => {
         <img className='w-1/12' src={cleaning} alt="cleaning" />
         <img className='w-1/12' src={plumbing} alt="plumbing" />
         <img className='w-1/12' src={tiling} alt="tiling" />
+        
         <Popup trigger= { <button className='text-white py-1 bg-[#606060] rounded-xl w-auto h-36 item-center hover:bg-[#fccc35] hover:scale-110'>Add / Remove</button>
             }
             on="click"
