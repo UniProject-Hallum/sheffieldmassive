@@ -10,6 +10,8 @@ import electric from '../../assets/electric.png'
 import Popup from 'reactjs-popup'
 import Checkbox from '@mui/material/Checkbox'
 import { MuiCheckbox } from './checkbox';
+import CheckboxExample from './checkbox';
+
 
 
 
@@ -34,17 +36,17 @@ const skills = () => {
             > 
             <section className="w-full max-w-sm rounded bg-white m-auto shadow h-36 flex flex-row">
                 <div className="">
-                <MuiCheckbox/>
-                <img className='object-cover border-4 ' src={bathroom} alt="bathroom" />
+                <ControlledCheckbox/>
+                <img className='object-cover border-2 ' src={bathroom} alt="bathroom" />
                 </div>
 
-                <img className='object-cover border-4 ' src={cleaning} alt="cleaning" />
-                <img className='object-cover border-4 ' src={plumbing} alt="plumbing" />
-                <img className='object-cover border-4 ' src={tiling} alt="tiling" />
-                <img className='object-cover border-4 ' src={electric} alt="electric" />
-                <img className='object-cover border-4 ' src={general} alt="general" />
-                <img className='object-cover border-4 ' src={woodwork} alt="woodwork" /> 
-                <img className='object-cover border-4 ' src={painting} alt="painting" />
+                <img className='object-cover border-2 ' src={cleaning} alt="cleaning" />
+                <img className='object-cover border-2 ' src={plumbing} alt="plumbing" />
+                <img className='object-cover border-2 ' src={tiling} alt="tiling" />
+                <img className='object-cover border-2 ' src={electric} alt="electric" />
+                <img className='object-cover border-2 ' src={general} alt="general" />
+                <img className='object-cover border-2 ' src={woodwork} alt="woodwork" /> 
+                <img className='object-cover border-2 ' src={painting} alt="painting" />
                 
            
           
@@ -61,7 +63,7 @@ export default skills
 
 //checkbox function inside popup
 function ControlledCheckbox() {
-    const [checked, setChecked] = React.useState(true);
+    const [checked, setChecked] = React.useState(false);
   
     const handleChange = (event) => {
       setChecked(event.target.checked);
