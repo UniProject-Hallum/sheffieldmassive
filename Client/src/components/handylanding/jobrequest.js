@@ -3,7 +3,7 @@ import Popup from 'reactjs-popup'
 
 const jobrequests = () => {
     return (
-        <div className="mx-20 py-10 rounded-lg ">
+        <div className="mx-20 my-20 py-10 rounded-lg ">
         <div className='font-bold text-3xl ml-24'>Job Requests</div>
         
         <div className='bg-[#fff] rounded-2xl wrap-text shadow-xl p-16 z-10 mt-4 mx-40'>
@@ -31,8 +31,10 @@ const jobrequests = () => {
         <button className= "border-round border rounded-lg py-2 px-2 bg-red-500 ml-5">NO </button> 
         </div>
         
-
-        </div></div>
+        </div>
+        <button className= "border rounded-lg px-10 py-5 float-right bg-[#606060] text-white mr-40 mt-5 ">
+            View All</button>
+        </div>
 
 
 

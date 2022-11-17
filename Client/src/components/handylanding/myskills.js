@@ -12,6 +12,7 @@ import Checkbox from '@mui/material/Checkbox'
 import { MuiCheckbox } from './checkbox'
 import CheckboxExample from './checkbox'
 import Skills from './Skills'
+import PopupFlowing from './popup';
 
 
 
@@ -19,7 +20,8 @@ import Skills from './Skills'
 
 const MySkills = () => {
     return (
-        
+    
+
     <div className='sm:flex pt-5 pr-20 justify-center'> 
         <div className='font-bold text-3xl pr-20'>My Skills</div>
         <img className='w-1/12' src={bathroom} alt="bathroom" />
@@ -27,7 +29,8 @@ const MySkills = () => {
         <img className='w-1/12' src={plumbing} alt="plumbing" />
         <img className='w-1/12' src={tiling} alt="tiling" />
         
-        <Popup trigger= { <button className='text-white py-1 bg-[#606060] rounded-xl w-auto h-36 item-center hover:bg-[#fccc35] hover:scale-110'>Add / Remove</button>
+        <Popup trigger= { 
+        <button className='text-white py-1 bg-[#606060] rounded-xl w-auto h-36 item-center hover:bg-[#fccc35] hover:scale-110'>Add / Remove</button>
             }
             on="click"
             closeOnDocumentClick
@@ -60,8 +63,9 @@ const MySkills = () => {
            </section>
 
         </Popup>
+        
     </div>
-
+    
 
     )        
 }
