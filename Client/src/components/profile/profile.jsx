@@ -10,10 +10,10 @@ const profile = () => {
         <Header />
         <Search />
         <div className=''>
-            <div className='flex items-center justify-center mt-7'>
+            <div className='flex items-center justify-center mt-7 '>
                 <div className='flex p-7 w-4/5 shadow-xl'>
                     <div className='w-1/5'>
-                        <img className='rounded-full h-52 w-52 ml-6' src={handyman} alt="" />
+                        <img className='md-shrink rounded-full h-52 w-52 ml-6' src={handyman} alt="" />
                     </div>
                     <div className='w-4/5 md:px-16'>
                     <h2 className='font-semibold md:text-3xl text-1xl md:font-bold md:leading-relaxed w-3/4 text-black'>Ahmed Elzenaria</h2>
