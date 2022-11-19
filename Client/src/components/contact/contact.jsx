@@ -18,9 +18,9 @@ export const Contact = () => {
   return (
     <div className='w-full h-screen grid place-items-center  text-[#606060]'>
         <div className='bg-white rounded-md shadow-md flex flex-row'>
-            <div className='h-96 w-96 bg-[#ceeaf2] p-8 md:hover:scale-y-110 rounded-md transition md:block hidden' id='contact_info'>
+            <div className='w-96 bg-[#ceeaf2] p-8 md:hover:scale-y-110 rounded-md transition md:block hidden' id='contact_info'>
                 <div className='flex justify-between'>
-                    <h2 className='text-xl'>Contact Infornation</h2>
+                    <h2 className='text-xl'>Contact infornation</h2>
                 </div>
                 
                 <div className='mt-6 flex flex-row'>
@@ -31,7 +31,7 @@ export const Contact = () => {
 
                     </div>
                     <div>
-                        <h2 className='text-xs'>Name :</h2>
+                        <h2 className='text-xs'>Name:</h2>
                         <p className='text-xs'>Ahmed Elzenaria</p>
                     </div>
 
@@ -46,7 +46,7 @@ export const Contact = () => {
 
                     </div>
                     <div>
-                        <h2 className='text-xs'>Email :</h2>
+                        <h2 className='text-xs'>Email:</h2>
                         <p className='text-xs'>any@gmail.com</p>
                     </div>
 
@@ -54,23 +54,23 @@ export const Contact = () => {
 
 
             </div>
-            <div className='h-96 w-96 px-6 py-8' id='contact_us'>
-                <div className='flex justify-between'>
-                    <h2 className='text-xl'>Get In Touch</h2>
+            <div className='w-96 px-6 py-8' id='contact_us'>
+                <div className='flex justify-between '>
+                    <h2 className='text-xl'>Enquire now</h2>
                 </div>
             
 
 
                 <form  ref={form} onSubmit={sendEmail}>
-                <input type="text" placeholder='send email to' name="to_email"
+                <input type="text" placeholder='Recipient' name="to_email"
                         className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>
-                    <input type="text" placeholder='Enter your Name' name="from_name"
+                    <input type="text" placeholder='Your name' name="from_name"
                         className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>
-                    <input type="text" placeholder='Enter your Email' name="from_email"
+                    <input type="text" placeholder='Your email' name="from_email"
                         className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>
                     <input type="text" placeholder='Subject' name="subject"
                         className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>
-                    <textarea type="text" name="message" placeholder='Enter Your Message Here' 
+                    <textarea type="text" name="Message" placeholder='Message' 
                         className='w-full text-xs px-3 h-28 my-2 outline-none rounded-md border focus:shadow-sm resize-none'></textarea><br/>
                     <button type='submit'  value="Send" className='bg-[#606060] rounded-md text-xs text-white px-4 py-2 cursor-pointer hover:bg-[#fccc35] hover:scale-110'>Send</button>
                 </form>
