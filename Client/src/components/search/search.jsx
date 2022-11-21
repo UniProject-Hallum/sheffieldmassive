@@ -35,7 +35,7 @@ const Search = (props) => {
 
   return (
     <div>
-        <div className='sm:bg-[#ceeaf2] sm:block hidden bg-[#fff] p-20 sm:mt-7 relative'></div>
+        <div className='sm:bg-[#ceeaf2] sm:block hidden bg-[#fff] p-20 sm:mt-7 relative '></div>
         <div className='bg-gray-50  flex items-center justify-center'>
             <div className='sm:bg-[#fff] bg-[#ceeaf2] rounded-2xl shadow-xl p-20 relative z-10 
             sm:-mt-20 mt-4 flex item-center justify-center w-4/5'>
