@@ -1,17 +1,21 @@
 import React from 'react'
 import Header from '../header/Header'
-import Skills from '../handylanding/myskills'
-import Banner from '../handylanding/banner'
-import JobReq from "../handylanding/jobrequest"
-import AcceptJobs from "../handylanding/acceptedjobs"
+
+import Selectskills from './Selectskills.js'
+import Listofskills from 
+
+import Banner from './banner'
+import JobReq from "./jobrequest"
+import AcceptJobs from "./acceptedjobs"
 import Footer from '../footer/footer'
 
-const handylanding = () => {
+const Handylanding = () => {
   return (
     <div>
         <Header />
         <Banner />
-        <Skills />
+
+        <Selectskills className=" sm:flex pt-5 pr-20 justify-center"/>
         
         <JobReq />
         <AcceptJobs />
@@ -21,4 +25,4 @@ const handylanding = () => {
   )
 }
 
-export default handylanding
+export default Handylanding

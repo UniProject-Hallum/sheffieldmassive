@@ -25,7 +25,8 @@ const jobrequests = () => {
             </section>
 
         </Popup>
-        </div></div>
+        </div>
+        </div>
 
 
 

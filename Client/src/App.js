@@ -6,7 +6,7 @@ import Search from "./components/searchresults/results";
 import Profile from "./components/profile/profile"
 import Contact from "./components/contact/contact";
 import PrivateRoutes from "./auth/PrivateRoutes";
-import Handy from "./components/handylanding/handylanding"
+import Handylanding from "./components/handylanding/Handylanding"
 
 
 import { BrowserRouter as Router, Routes, Route}
@@ -23,7 +23,7 @@ function App() {
           <Route path='/contact' element={<Contact/>} />
           <Route exact path='/profile' element={<Profile/>} />
           <Route element= {<PrivateRoutes/>}>
-            <Route path='/handyman' element={<Handy/>} />
+            <Route path='/handyman' element={<Handylanding/>} />
           </Route>
           
       </Routes>
