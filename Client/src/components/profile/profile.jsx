@@ -4,6 +4,7 @@ import Search from '../search/search'
 import Footer from '../footer/footer'
 import handyman from '../../assets/3.jpg'
 import Stars from './Stars'
+import { Link } from 'react-router-dom'
 
 
 const profile = () => {
@@ -74,7 +75,21 @@ const profile = () => {
                 </div>
          </div>
         
-
+   <div className='py-8 flex-col'>
+            
+            <h4 className='font-bold text-3xl md:font-medium md:leading-relaxed mt-2 mb-4 '>Location</h4>
+            <p1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto at adipisci aspernatur, autem officia dolores voluptatem iure neque recusandae similique hic aliquam itaque repellat esse. Voluptatem itaque laboriosam accusamus. Eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolorum at numquam cum illo sint sit id similique quo fugit, harum ut tempora vel modi quod explicabo itaque ratione! Voluptates!</p1>
+            <img className='h-auto w-4/5 py-8 flex p-7 pl-20' src='https://images.unsplash.com/photo-1538514860079-8443cff3cb21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGxvY2F0aW9uJTIwbWFwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60' alt=''></img>
+            
+            </div>
+            </div>
+            <div className='mx-auto w-4/5'>
+             <Link to={"/contact"}>
+                    <button className='py-2 bg-[#ceeaf2] px-5 border rounded-xl  hover:bg-[#fccc35] hover:scale-110'>Contact</button>
+             </Link>   
+            
+            </div>
+        </div>
 
         <Footer />
     </div>

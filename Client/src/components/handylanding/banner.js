@@ -1,6 +1,6 @@
 import React from 'react'
 import handyman from '../../assets/2.png'
-
+//import name details to add to title 
 
 const banner = () => {
     return (
@@ -9,6 +9,8 @@ const banner = () => {
 <h2 className='flex flex-wrap items-center justify-center md:text-6xl md:font-medium'> 
 
 Welcome Back! 
+*NAME*
+
 
 <img className='w-2/12 rounded-2x1 ml-20' src={handyman} alt="logo" /></h2>
 </div>
