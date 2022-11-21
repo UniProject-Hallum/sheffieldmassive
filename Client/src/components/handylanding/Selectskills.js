@@ -27,8 +27,8 @@ function Selectskills() {
         
         <div className='bg-[#fff] rounded-2xl shadow-xl p-16 z-10 mt-4 mx-20'>
             requested but unaccepted jobs here          
-        
-            <div className='w-96'>
+{/*         
+            <div className='w-9/12'>
                   <Select className='mt-2' 
                                     options={optionList}
                                     placeholder="Select skills"
@@ -36,7 +36,7 @@ function Selectskills() {
                                     onChange={handleSelect}
                                     isMulti
                             /> 
-              </div>
+              </div> */}
         </div>
         </div>
 

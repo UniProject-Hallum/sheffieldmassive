@@ -7,7 +7,7 @@ import woodwork from '../../assets/Woodwork.png'
 import general from '../../assets/general-repairs.png'
 import painting from '../../assets/painting.png'
 import electric from '../../assets/electric.png'
-import {}
+
 
 function listofSkills() {
 
@@ -15,7 +15,7 @@ function listofSkills() {
 
 
     <div>
-      
+      <image src={'https://icons8.com/icon/4534/to-do'}/>
     </div>
   )
 }
