@@ -101,7 +101,7 @@ const profile = () => {
             </div>
             </div>
             <div className='mx-auto w-4/5'>
-            <a href=""><button className='py-2 bg-[#ceeaf2] px-5 border rounded-xl  hover:bg-[#fccc35] hover:scale-110'>Contact</button></a>
+            <a href="/contact"><button className='py-2 bg-[#ceeaf2] px-5 border rounded-xl  hover:bg-[#fccc35] hover:scale-110'>Contact</button></a>
             </div>
         </div>
         <Footer />
