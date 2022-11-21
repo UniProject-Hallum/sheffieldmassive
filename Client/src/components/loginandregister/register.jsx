@@ -21,8 +21,8 @@ const Register = () => {
     const navigate = useNavigate();
     const [selectedOptions, setSelectedOptions] = useState();
     const [selectedCity, setSelectedCity] = useState();
-    const [genderValue,setGenderValue] = useState('');
-
+    const [genderProfileValue,setGenderProfileValue] = useState('');
+    const [costValue,setCostValue] = useState('');
     let ListOfCities = []
     const numberOfCities = 30;
     const optionList = getSkills();
@@ -48,10 +48,11 @@ const Register = () => {
         selectedOptions.forEach(obj => { values.push(obj['value']) })
        let userinfo = {
             description: descriptionValue,
-            gender: genderValue,
+            gender: genderProfileValue,
             skills: values,
-            city: selectedCity
-        };
+            city: selectedCity,
+            cost: costValue,
+        }
 
         console.log("this is user info :  "+ JSON.stringify(userinfo));
         const response = await axios.post(baseurl+'/api/register',
@@ -81,7 +82,7 @@ const Register = () => {
 }
 
   return (
-    <section className='bg-gray-50 min-h-screen flex items-center justify-center'>      
+    <div className='bg-gray-50 min-h-screen flex items-center justify-center'>      
         <div className='bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5'>
             <div className='md:block hidden w-1/2'>
                 <a href="/"><img className='rounded-2xl' src={handyman} alt="" /></a>
@@ -110,48 +111,53 @@ const Register = () => {
                             <label htmlFor="inline-radio2" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">HandyMan</label>
                         </div>                       
                     </div>
-                    {
-                          roleValue ==='handyman' &&(
-                            <div>        
-                            <div>
-                                <p>Please tell us about yourself</p>
-                                <div className='flex mt-5 mb-3'>
-                                    <div className="flex items-center mr-4">
-                                        <input required onChange={e => setGenderValue('M')}  id="inline-radio3" type="radio" value="" name="inline-radio-group2" className="w-4 h-4 bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label htmlFor="inline-radio3" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">M</label>
+                        {
+                            roleValue ==='handyman' &&(
+                                <div>        
+                                    <div>
+                                        <p>Please tell us about yourself</p>
+                                        <div className='flex mt-5 mb-3'>
+                                            <div className="flex items-center mr-4">
+                                                <input required onChange={e => setGenderProfileValue('M')}  id="inline-radio3" type="radio" value="" name="inline-radio-group2" className="w-4 h-4 bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                <label htmlFor="inline-radio3" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">M</label>
+                                            </div>
+                                            <div className="flex items-center mr-4">
+                                                <input required onChange={e => setGenderProfileValue('F')}   id="inline-radio4" type="radio" value="" name="inline-radio-group2" className="w-4 h-4  bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                <label htmlFor="inline-radio4" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">F</label>
+                                            </div>
+                            
+                                        </div>
+                                        <textarea required  className='p-2 w-full h-32 rounded-xl border' placeholder=''
+                                        onChange={e => setDescriptionValue(e.target.value)}  name='description'/>                                
                                     </div>
-                                    <div className="flex items-center mr-4">
-                                        <input required onChange={e => setGenderValue('F')}   id="inline-radio4" type="radio" value="" name="inline-radio-group2" className="w-4 h-4  bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label htmlFor="inline-radio4" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">F</label>
-                                    </div>
-                       
+                                        <p>Please Select all you Skills</p>
+
+                                        <Select className='mt-2' 
+                                                options={optionList}
+                                                placeholder="Select skills"
+                                                value={selectedOptions}
+                                                onChange={handleSelect}
+                                                isMulti
+                                        /> 
+
+                                        <p>Please Select Your Location</p>
+
+                                        <Select 
+                                                options={ListOfCities}
+                                                placeholder="Select City"
+                                                value={selectedCity}
+                                                onChange={handleSelectCity}
+                                                isSearchable={true}                                 
+                                        /> 
+
+                                        <p>What is your average price per hour for a job </p>
+
+                                        <input required className='p-2 mt-8 rounded-xl border' type="number" name='name' placeholder='price/hr' onChange={e => setCostValue(e.target.value)}/>
+                            
+
                                 </div>
-                                <textarea required  className='p-2 w-full h-32 rounded-xl border' placeholder=''
-                                 onChange={e => setDescriptionValue(e.target.value)}  name='description'/>                                
-                            </div>
-                            <p>Please Select all you Skills</p>
-
-                            <Select className='mt-2' 
-                                    options={optionList}
-                                    placeholder="Select skills"
-                                    value={selectedOptions}
-                                    onChange={handleSelect}
-                                    isMulti
-                            /> 
-
-                            <p>Please Select Your Location</p>
-
-                            <Select 
-                                    options={ListOfCities}
-                                    placeholder="Select City"
-                                    value={selectedCity}
-                                    onChange={handleSelectCity}
-                                    isSearchable={true}                                 
-                            />                          
-
-                            </div>
-                        )  
-                    }
+                            )  
+                        }
 
 
 
@@ -180,10 +186,10 @@ const Register = () => {
 
         </div>
 
-    </section>
+    </div>
   )
 }
 
-export default Register
+export default Register;
 
 
