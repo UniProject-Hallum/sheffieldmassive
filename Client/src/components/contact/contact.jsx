@@ -18,7 +18,7 @@ export const Contact = () => {
   return (
     <div className='w-full h-screen grid place-items-center  text-[#606060]'>
         <div className='bg-white rounded-md shadow-md flex flex-row'>
-            <div className='h-96 w-96 bg-[#ceeaf2] p-8 md:hover:scale-y-110 rounded-md transition md:block hidden' id='contact_info'>
+            <div className='w-96 bg-[#ceeaf2] p-8 md:hover:scale-y-110 rounded-md transition md:block hidden' id='contact_info'>
                 <div className='flex justify-between'>
                     <h2 className='text-xl'>Contact Infornation</h2>
                 </div>
@@ -54,7 +54,7 @@ export const Contact = () => {
 
 
             </div>
-            <div className='h-96 w-96 px-6 py-8' id='contact_us'>
+            <div className='w-96 px-6 py-8' id='contact_us'>
                 <div className='flex justify-between'>
                     <h2 className='text-xl'>Get In Touch</h2>
                 </div>
