@@ -62,7 +62,7 @@ export const Contact = () => {
 
 
                 <form  ref={form} onSubmit={sendEmail}>
-                <input type="hidden" placeholder='send email to' name="to_email"
+                <input type="text" placeholder='send email to' name="to_email"
                         className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>
                     <input type="text" placeholder='Enter your Name' name="from_name"
                         className='w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm' /><br/>

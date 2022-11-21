@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../header/Header'
 
 import Selectskills from './Selectskills.js'
-import Listofskills from 
+// import Listofskills from 
 
 import Banner from './banner'
 import JobReq from "./jobrequest"

@@ -18,8 +18,26 @@ function getSkills (){
 function getCities (){
 
     const listOfCities = cities; 
+    return listOfCities;
 
-      return listOfCities;
+}
+
+function getMockUserDB(){
+
+  let userinfo = {
+    description: "i am the best plumber",
+    gender: "M",
+    skills: ["plumber","electricity","window cleaner"],
+    city: "birmingham"
+};
+
+const user = [{email: "clive@gmail.com",
+               username: "Clive Tsungu", 
+               password: "hello123",
+               role: "customer",
+               userInfo: userinfo}]
+return user               
+
 
 }
 

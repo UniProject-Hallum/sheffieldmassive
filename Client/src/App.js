@@ -21,7 +21,7 @@ function App() {
           <Route path='/register' element={<Register/>} />
           <Route path='/search' element={<Search/>} />
           <Route path='/contact' element={<Contact/>} />
-          <Route exact path='/profile' element={<Profile/>} />
+          <Route exact path='/profile/:userId' element={<Profile/>} />
           <Route element= {<PrivateRoutes/>}>
             <Route path='/handyman' element={<Handylanding/>} />
           </Route>

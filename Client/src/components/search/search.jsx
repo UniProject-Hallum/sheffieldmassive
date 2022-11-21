@@ -4,7 +4,7 @@ import React from 'react'
 const search = () => {
   return (
     <div>
-        <div className='sm:bg-[#ceeaf2] sm:block hidden bg-[#fff] p-20 sm:mt-7 relative'></div>
+        <div className='sm:bg-[#ceeaf2] sm:block hidden bg-[#fff] p-20 sm:mt-7 relative '></div>
         <div className='bg-gray-50  flex items-center justify-center'>
             <div className='sm:bg-[#fff] bg-[#ceeaf2] rounded-2xl shadow-xl p-20 relative z-10 
             sm:-mt-20 mt-4 flex item-center justify-center w-4/5'>
@@ -40,7 +40,7 @@ const search = () => {
 
                         </select>
                     </div>
-                    <a href="/search"><button className='bg-[#fccc35] rounded-xl w-full py-2 hover:bg-[#ceeaf2] hover:scale-103'>Search</button></a>
+                    <a href="/search"><button className='font-bold bg-[#fccc35] rounded-xl w-full py-2 hover:bg-[#ceeaf2] hover:scale-103'>Search</button></a>
                 
                 </form>
             </div>
