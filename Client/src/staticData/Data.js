@@ -31,12 +31,36 @@ function getMockUserDB(){
     city: "birmingham"
 };
 
-const user = [{email: "clive@gmail.com",
+let userinfo2 = {
+  description: "i am the best Electrician",
+  gender: "M",
+  skills: ["electricity","Car wrapping"],
+  city: "birmingham"
+};
+
+let userinfo3 = {
+  description: "i am the best Cleaner",
+  gender: "M",
+  skills: ["general Cleaning","window cleaner"],
+  city: "birmingham"
+};
+
+const users = [{email: "clive@gmail.com",
                username: "Clive Tsungu", 
                password: "hello123",
-               role: "customer",
-               userInfo: userinfo}]
-return user               
+               role: "handyman",
+               userInfo: userinfo},
+               {email: "james@gmail.com",
+               username: "James Smith", 
+               password: "smithy",
+               role: "handyman",
+               userInfo: userinfo2},
+               {email: "jack@gmail.com",
+               username: "Jack", 
+               password: "jacky",
+               role: "handyman",
+               userInfo: userinfo3}]
+return users              
 
 
 }
