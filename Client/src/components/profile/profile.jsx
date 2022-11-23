@@ -16,11 +16,11 @@ const profile = () => {
                         <img className='md-shrink rounded-full h-52 w-52 ml-6' src={handyman} alt="" />
                     </div>
                     <div className='w-4/5 md:px-16'>
-                    <h2 className='font-semibold md:text-3xl text-1xl md:font-bold md:leading-relaxed w-3/4 text-black'>Ahmed Elzenaria</h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mt-2 w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-</svg>
+                        <h2 className='font-semibold md:text-3xl text-1xl md:font-bold md:leading-relaxed w-3/4 text-black'>Ahmed Elzenaria</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mt-2 w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
 
                         <h4 className='md:text-1xl text-1xl md:font-medium  md:leading-relaxed text-[#606060] mt-2 mb-2'> Manchester, Greater Manchester, UK</h4>
                         <p>Ipsum pulvinar enim ad quam a eget per varius ante. Magna aptent suscipit nostra enim pulvinar semper. Est, sollicitudin metus montes faucibus eleifend. Faucibus ipsum sagittis libero ligula justo ullamcorper urna id faucibus fames odio consequat. <a href="/profile"><span className='text-[#000000] hover:text-[#fccc35]'></span></a></p>
@@ -60,29 +60,29 @@ const profile = () => {
                     </div>
                     <h4 className='font-bold text-2xl md:font-medium  md:leading-relaxed mt-7 mb-7'>Completed projects</h4>
                     <div className='grid grid-rows-2 grid-cols-4 gap-4 '>
-                    <img className='rounded-lg row-span-2 col-span-2' src={handyman} alt=''></img>
-                    <img className='rounded-lg' src={handyman} alt=''></img>
-                    <img className='rounded-lg' src={handyman} alt=''></img>
-                    <img className='rounded-lg' src={handyman} alt=''></img>
-                    <img className='rounded-lg' src={handyman} alt=''></img>
+                        <img className='rounded-lg row-span-2 col-span-2' src={handyman} alt=''></img>
+                        <img className='rounded-lg' src={handyman} alt=''></img>
+                        <img className='rounded-lg' src={handyman} alt=''></img>
+                        <img className='rounded-lg' src={handyman} alt=''></img>
+                        <img className='rounded-lg' src={handyman} alt=''></img>
                      </div>
 
-<div class='columns-2 py-7 mt-5'>
-                     <div class='col-span-1 container-mx-auto'>
-                        <h1 class='flex grow text-2xl font-semibold py-5'>Location</h1>
-                        <p class='text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, iste optio. Id, nihil reiciendis provident pariatur nemo perferendis et vel eaque voluptatem quaerat ad sint commodi modi tenetur iste maxime! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima quod ipsam reprehenderit natus quas necessitatibus, quia alias architecto, in doloribus facere ullam, officia quidem eveniet esse commodi. Nulla, similique sunt.</p>
-                     </div>
+                    <div class='columns-2 py-7 mt-5'>
+                        <div class='col-span-1 container-mx-auto'>
+                            <h1 class='flex grow text-2xl font-semibold py-5'>Location</h1>
+                            <p class='text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, iste optio. Id, nihil reiciendis provident pariatur nemo perferendis et vel eaque voluptatem quaerat ad sint commodi modi tenetur iste maxime! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima quod ipsam reprehenderit natus quas necessitatibus, quia alias architecto, in doloribus facere ullam, officia quidem eveniet esse commodi. Nulla, similique sunt.</p>
+                        </div>
 
-                     <div class='col-span-1 container-mx-auto'>
-                        <h1 class='flex grow text-2xl font-semibold py-5'>Description</h1>
-                        <p class='text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor inventore culpa officia voluptatem. Labore ea facere nisi, quae perferendis reprehenderit aliquid nostrum aperiam ipsa, modi mollitia quis exercitationem omnis sequi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut dolorem saepe ipsa numquam obcaecati unde iste cupiditate debitis consequatur? Quibusdam asperiores unde debitis laudantium, ipsum ut. Voluptatem sint laboriosam animi? lo</p>
-                        
-                     </div> 
+                        <div class='col-span-1 container-mx-auto'>
+                            <h1 class='flex grow text-2xl font-semibold py-5'>Description</h1>
+                            <p class='text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor inventore culpa officia voluptatem. Labore ea facere nisi, quae perferendis reprehenderit aliquid nostrum aperiam ipsa, modi mollitia quis exercitationem omnis sequi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut dolorem saepe ipsa numquam obcaecati unde iste cupiditate debitis consequatur? Quibusdam asperiores unde debitis laudantium, ipsum ut. Voluptatem sint laboriosam animi? lo</p>
+                            
+                        </div> 
                      
                      </div>
                      <div class='container-mx-auto place-item-center'>
-                     <img class='rounded-lg h-1/2 w-1/2 item-center justify-center' src='https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2531&q=80' alt=''></img>
-                     <p1 class=''>rgrjgnf</p1>
+                        <img class='rounded-lg h-1/2 w-1/2 item-center justify-center' src='https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2531&q=80' alt=''></img>
+                        <p1 class=''>rgrjgnf</p1>
                      </div>
 
              
