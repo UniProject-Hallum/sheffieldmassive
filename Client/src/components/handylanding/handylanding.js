@@ -1,23 +1,27 @@
 import React from 'react'
 import Header from '../header/Header'
-import Skills from '../handylanding/myskills'
-import Banner from '../handylanding/banner'
-import JobReq from "../handylanding/jobrequest"
+import MySkills from './Myskills'
+import Banner from './banner'
+import JobReq from "./jobrequest"
+import AcceptJobs from "./acceptedjobs"
 import Footer from '../footer/footer'
+import { useUser } from '../../auth/useUser'
 
-const handylanding = () => {
+
+const Handylanding = () => {
+    let user = useUser()
+    console.log(user)
   return (
     <div>
         <Header />
         <Banner />
-        <Skills />
-        
+        <MySkills/>
         <JobReq />
-
+        <AcceptJobs />
         <Footer />
     </div>
     
   )
 }
 
-export default handylanding
+export default Handylanding

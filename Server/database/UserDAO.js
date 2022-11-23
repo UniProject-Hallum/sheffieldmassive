@@ -1,10 +1,9 @@
-
+import users from "../models/UserModel.js";
 
  async function FindAllUsers(){
     try{
-           
-    }catch (e){
-            
+        
+    }catch (e){          
     }
 
 
