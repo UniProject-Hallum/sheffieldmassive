@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../header/Header'
-import MySkills from './MySkills'
+import MySkills from './Myskills'
 import Banner from './banner'
 import JobReq from "./jobrequest"
 import AcceptJobs from "./acceptedjobs"

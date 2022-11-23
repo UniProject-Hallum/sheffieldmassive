@@ -4,6 +4,7 @@ import Search from "../search/search";
 import Footer from "../footer/footer";
 import handyman from "../../assets/3.jpg";
 import Stars from "./Stars";
+
 import { Link, useParams } from "react-router-dom";
 
 const Profile = () => {
