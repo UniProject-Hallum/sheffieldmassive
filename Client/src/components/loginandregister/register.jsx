@@ -7,9 +7,12 @@ import Select from "react-select";
 import AsyncSelect from "react-select/async"
 import { getSkills,getCities } from '../../staticData/Data';
 import search from '../search/search';
+import man from '../../assets/man.png'
+import woman from '../../assets/woman.jpg'
 
 
 const Register = () => {
+
     const [emailValue, setEmailValue] = useState();
     const [usernameValue, setUsernameValue] = useState();
     const [passwordValue, setPasswordValue] = useState();
@@ -29,7 +32,7 @@ const Register = () => {
     const citiesList = getCities();
 
     for (let i = 0; i < numberOfCities; i++) {
-        ListOfCities.push({ value: citiesList[i]['city'], label: citiesList[i]['city']} )
+        ListOfCities.push({ value: [citiesList[i]['lat'] , citiesList[i]['lng'] ] , label: citiesList[i]['city']} )
       }
 
 
@@ -45,13 +48,15 @@ const Register = () => {
     try {
         let itoken;
         let values= [];
-        selectedOptions.forEach(obj => { values.push(obj['value']) })
+        selectedOptions.forEach(obj => { values.push({label: obj['label'], lng: obj['value'].lng, lat: obj['value'].lat }) })
        let userinfo = {
             description: descriptionValue,
             gender: genderProfileValue,
             skills: values,
             city: selectedCity,
             cost: costValue,
+            acceptedJobs:[],
+            requestedJobs:[],
         }
 
         console.log("this is user info :  "+ JSON.stringify(userinfo));
@@ -118,11 +123,11 @@ const Register = () => {
                                         <p>Please tell us about yourself</p>
                                         <div className='flex mt-5 mb-3'>
                                             <div className="flex items-center mr-4">
-                                                <input required onChange={e => setGenderProfileValue('M')}  id="inline-radio3" type="radio" value="" name="inline-radio-group2" className="w-4 h-4 bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                <input required onChange={e => setGenderProfileValue(man)}  id="inline-radio3" type="radio" value="" name="inline-radio-group2" className="w-4 h-4 bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                                 <label htmlFor="inline-radio3" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">M</label>
                                             </div>
                                             <div className="flex items-center mr-4">
-                                                <input required onChange={e => setGenderProfileValue('F')}   id="inline-radio4" type="radio" value="" name="inline-radio-group2" className="w-4 h-4  bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                <input required onChange={e => setGenderProfileValue(woman)}   id="inline-radio4" type="radio" value="" name="inline-radio-group2" className="w-4 h-4  bg-gray-100 border-gray-300  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                                 <label htmlFor="inline-radio4" className="ml-2 text-sm font-medium text-[#606060] dark:text-gray-300">F</label>
                                             </div>
                             
@@ -190,6 +195,4 @@ const Register = () => {
   )
 }
 
-export default Register;
-
-
+export default Register

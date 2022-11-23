@@ -1,36 +1,29 @@
 import React from 'react'
 import Popup from 'reactjs-popup'
 
-const jobrequests = () => {
+const Jobrequests = () => {
     return (
-        <div className="mx-20 my-20 py-10 rounded-lg ">
-        <div className='font-bold text-3xl ml-24'>Job Requests</div>
+        <div >
+
+        <div className=" max-w-md m-10 max p-6 bg-white border border-gray-200 rounded-lg shadow-lg ">
         
-        <div className='bg-[#fff] rounded-2xl wrap-text shadow-xl p-16 z-10 mt-4 mx-40'>
-            requested but unaccepted jobs here, if too much text use the view more button to see full         
         
-        <Popup trigger= { <button className='text-black py-1 bg-[#ceeaf2] px-10 ml-12 border rounded-xl hover:bg-[#fccc35] hover:scale-110'>View More</button>
-            }
-            on="hover"
-            closeOnDocumentClick
-            mouseLeaveDelay={300}
-            mouseEnterDelay={0}
-            contentStyle={{ padding: '20px', border: '' }}
-            arrow={false}
-            position="right"
-            > 
-            <section className="w-full max-w-sm py-10 px-10 rounded bg-[#ceeaf2] m-auto shadow flex">
-                
-                More text in here 
-            </section>
+        <div className=''>                  
+                      <h3 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white  ">Job Requests</h3> 
 
-        </Popup>
-        </div>
-        </div>
+         </div>
 
 
+        
+        </div> 
 
+     {/* AcceptJobs box */}
+
+   
+                    
+   
+    </div>
     )       
 }
 
-export default jobrequests
+export default Jobrequests
