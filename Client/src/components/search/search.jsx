@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {React,useState} from 'react'
+import {React,useReducer,useState} from 'react'
 import { Link } from "react-router-dom";
 import City from '../../staticData/gb.json'
 
@@ -7,7 +7,9 @@ import City from '../../staticData/gb.json'
 const Search = (props) => {
     const [SkillValue, setSkillValue] = useState('');
     const [CityValue, setCityValue] = useState('');
+    const [costValue, setcostValue] = useState('');
     const [results, setresults] = useState([]);
+    const [ignore,forceUpdate] = useReducer(x=>x+1,0)
 
     function handleSkillValue(event) { 
         setSkillValue(event.target.value);
@@ -15,7 +17,9 @@ const Search = (props) => {
     function handleCityValue(data) { 
         setCityValue(data.target.value);
       }
-      
+      function handlecostValue(data) { 
+        setcostValue(data.target.value);
+      }
 
     const searchHandle = async ()=>{
         let results = await fetch('http://localhost:3001/search/'+SkillValue+'&'+CityValue);
@@ -23,7 +27,7 @@ const Search = (props) => {
         results = await results.json()
         setresults(results)
         props.onClick(results)
-        
+        forceUpdate()
     }
     
     const searchHandler = (e) => {
@@ -56,18 +60,18 @@ const Search = (props) => {
                                 City.map((result)=>(<option value={result.city}>{result.city}</option>))
                             }
                         </select>
-                        <select name="" id="" onChange={searchHandle} className='p-2 rounded-xl text-center w-full bg-[#cccccc] sm:ml-4 border hover:border-[#606060]'>
+                        <select name="" id="" onChange={handlecostValue} className='p-2 rounded-xl text-center w-full bg-[#cccccc] sm:ml-4 border hover:border-[#606060]'>
                             <option selected={true} disabled="disabled">Max price</option>
-                            <option value="">£30-50 p/h</option>
-                            <option value="">£50-75 p/h</option>
-                            <option value="">£75-100 p/h</option>
-                            <option value="">£100-150 p/h</option>
-                            <option value="">£150-200 p/h</option>
-                            <option value="">£200+</option>
+                            <option value="50">£30-50 p/h</option>
+                            <option value="75">£50-75 p/h</option>
+                            <option value="10">£75-100 p/h</option>
+                            <option value="150">£100-150 p/h</option>
+                            <option value="200">£150-200 p/h</option>
+                            <option value="100000">£200+</option>
 
                         </select>
                     </div>
-                    <Link to={'/search'}>
+                    <Link to={'/search/'+SkillValue+'&'+CityValue+'&'+costValue}>
                         <button onClick={searchHandle} type="submit" className='bg-[#fccc35] rounded-xl w-full py-2 hover:bg-[#ceeaf2] hover:scale-103'>Search</button>
                     </Link>
                     

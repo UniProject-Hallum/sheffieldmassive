@@ -1,13 +1,16 @@
 import React from 'react'
 import Header from '../header/Header'
-import MySkills from '../handylanding/MySkills'
-import Banner from '../handylanding/banner'
-import JobReq from "../handylanding/jobrequest"
-import AcceptJobs from "../handylanding/acceptedjobs"
+import MySkills from './MySkills'
+import Banner from './banner'
+import JobReq from "./jobrequest"
+import AcceptJobs from "./acceptedjobs"
 import Footer from '../footer/footer'
+import { useUser } from '../../auth/useUser'
 
 
-const handylanding = () => {
+const Handylanding = () => {
+    let user = useUser()
+    console.log(user)
   return (
     <div>
         <Header />
@@ -21,4 +24,4 @@ const handylanding = () => {
   )
 }
 
-export default handylanding
+export default Handylanding

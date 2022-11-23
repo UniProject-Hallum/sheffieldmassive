@@ -6,7 +6,7 @@ import Search from "./components/searchresults/results";
 import Profile from "./components/profile/profile"
 import Contact from "./components/contact/contact";
 import PrivateRoutes from "./auth/PrivateRoutes";
-import Handy from "./components/handylanding/handylanding"
+import Handy from "./components/handylanding/Handylanding"
 
 
 import { BrowserRouter as Router, Routes, Route}
@@ -20,10 +20,13 @@ function App() {
           <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<Register/>} />
           <Route path='/search' element={<Search/>} />
-          <Route path='/contact' element={<Contact/>} />
-          <Route exact path='/profile/:userId' element={<Profile/>} />
+          <Route path='/search/:SkillValue&:CityValue' element={<Search/>} />
+          
           <Route element= {<PrivateRoutes/>}>
+            
+            <Route exact path='/profile/:userId' element={<Profile/>} />
             <Route path='/handyman' element={<Handy/>} />
+            <Route path='/contact' element={<Contact/>} />
           </Route>
           
       </Routes>
