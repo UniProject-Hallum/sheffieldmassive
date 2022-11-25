@@ -32,10 +32,10 @@ const UpdateUser = async (req, res) =>{
 const SearchUser = async (req, res) =>{
     try{
         const searchUser = await users.find({
-            "$or":[
+            "$and":[
 
                 {"userInfo.skills":{$regex:req.params.skill}},
-                {"userInfo.city":{$regex:req.params.city}},
+                {"userInfo.city.label":{$regex:req.params.city}},
                 {"userInfo.cost":{ $lte :req.params.cost}},
             ]
         });

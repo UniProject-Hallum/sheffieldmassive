@@ -1,8 +1,7 @@
 import axios from 'axios';
 import {React,useReducer,useState} from 'react'
 import { Link } from "react-router-dom";
-import City from '../../staticData/gb.json'
-
+import City from "../../staticData/gb.json";
 
 const Search = (props) => {
     const [SkillValue, setSkillValue] = useState('');
@@ -21,14 +20,14 @@ const Search = (props) => {
         setcostValue(data.target.value);
       }
 
-    const searchHandle = async ()=>{
-        let results = await fetch('http://localhost:3001/search/'+SkillValue+'&'+CityValue);
-        const values = SkillValue+'&'+CityValue
-        results = await results.json()
-        setresults(results)
-        props.onClick(results)
-        forceUpdate()
-    }
+    // const searchHandle = async ()=>{
+    //     let results = await fetch('http://localhost:3001/search/'+SkillValue+'&'+CityValue+'&'+costValue);
+    //     const values = SkillValue+'&'+CityValue
+    //     results = await results.json()
+    //     setresults(results)
+    //     props.onClick(results)
+    //     forceUpdate()
+    // }
     
     const searchHandler = (e) => {
         e.preventDefault()
@@ -62,28 +61,36 @@ const Search = (props) => {
                         </select>
                         <select name="" id="" onChange={handlecostValue} className='p-2 rounded-xl text-center w-full bg-[#cccccc] sm:ml-4 border hover:border-[#606060]'>
                             <option selected={true} disabled="disabled">Max price</option>
-                            <option value="50">£30-50 p/h</option>
-                            <option value="75">£50-75 p/h</option>
-                            <option value="10">£75-100 p/h</option>
-                            <option value="150">£100-150 p/h</option>
-                            <option value="200">£150-200 p/h</option>
-                            <option value="100000">£200+</option>
+                            <option value="50">Up to 50 p/h</option>
+                            <option value="75">Up to 75 p/h</option>
+                            <option value="10">Up to 100 p/h</option>
+                            <option value="150">Up to 150 p/h</option>
+                            <option value="200">Up to 200 p/h</option>
+                            <option value="10000000">All</option>
 
                         </select>
                     </div>
                     <Link to={'/search/'+SkillValue+'&'+CityValue+'&'+costValue}>
-                        <button onClick={searchHandle} type="submit" className='bg-[#fccc35] rounded-xl w-full py-2 hover:bg-[#ceeaf2] hover:scale-103'>Search</button>
+                        <button type="submit" className='bg-[#fccc35] rounded-xl w-full py-2 hover:bg-[#ceeaf2] hover:scale-103'>Search</button>
                     </Link>
                     
                 </form>
             </div>
+            <Link to={"/search"}>
+              <button
+                onClick={searchHandle}
+                type="submit"
+                className="bg-[#fccc35] rounded-xl w-full py-2 hover:bg-[#ceeaf2] hover:scale-103"
+              >
+                Search
+              </button>
+            </Link>
+          
         </div>
-        <div className='h-4 relative mb-0'>
-       
-            
-        </div>  
+      
+      <div className="h-4 relative mb-0"></div>
     </div>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

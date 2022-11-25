@@ -1,17 +1,16 @@
-import {Route,Outlet,useLocation, Navigate} from 'react-router-dom';
-import { useUser } from './useUser';
+import { Route, Outlet, useLocation, Navigate } from "react-router-dom";
+import { useUser } from "./useUser";
 
-import React from 'react'
+import React from "react";
 
 const PrivateRoutes = () => {
+  const user = useUser();
 
-    const user = useUser();
+  let location = useLocation();
 
-    let location = useLocation();
+  if (!user) return <Navigate to="/login" />;
 
-    if(!user) return <Navigate to="/login" />
-
-    return <Outlet/>
-}
+  return <Outlet />;
+};
 
 export default PrivateRoutes;

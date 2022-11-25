@@ -1,16 +1,14 @@
 import Login from "./components/loginandregister/Login";
 import Register from "./components/loginandregister/Register";
-import Home from './components/landingpage/landing';
+import Home from "./components/landingpage/landing";
 import Header from "./components/header/Header";
 import Search from "./components/searchresults/results";
-import Profile from "./components/profile/profile"
+import Profile from "./components/profile/profile";
 import Contact from "./components/contact/contact";
 import PrivateRoutes from "./auth/PrivateRoutes";
 import Handy from "./components/handylanding/Handylanding"
 
-
-import { BrowserRouter as Router, Routes, Route}
-    from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
