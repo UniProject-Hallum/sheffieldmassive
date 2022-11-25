@@ -7,7 +7,7 @@ function Header() {
   const user = useUser(); 
   let isLoggedIn = false;
 
-  const logout = () => {
+  const logout = () => { 
     sessionStorage.removeItem("token");
     navigate("/");
     navigate(0);

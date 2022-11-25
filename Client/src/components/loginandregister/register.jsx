@@ -10,7 +10,7 @@ import search from "../search/search";
 import man from "../../assets/man.png";
 import woman from "../../assets/woman.jpg";
 
-const Register = () => {
+const Register = () => { 
   const [emailValue, setEmailValue] = useState();
   const [usernameValue, setUsernameValue] = useState();
   const [passwordValue, setPasswordValue] = useState();
