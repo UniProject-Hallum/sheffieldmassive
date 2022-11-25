@@ -9,8 +9,8 @@ const slide = () => {
         <div className='shadow-xl flex justify-center w-4/5 h-4/5'>
         
             <div className='w-3/5 '>
-                <h4 className='p-10 font-sans-serif font-bold md:text-6xl md:font-medium  md:leading-snug'>Helping you find the right person for any job</h4>
-                <div className='p-8  text-xl flex items-center'>
+                <h4 className='p-10 font-sans-serif font-bold md:text-3xl lg:font-medium  md:leading-snug'>Helping you find the right person for any job</h4>
+                <div className='p-8 text-xs md:text-xl flex items-center'>
                     <p className=''>Join us today to access our wide range of professional handymen. Whether you're looking for a quick paint fix or a full-scale kitchen renovation, HandyMan4U will connect you with an experienced tradesman to complete the job with just a few clicks and messages. </p>
                 </div>
                 

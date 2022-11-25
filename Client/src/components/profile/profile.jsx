@@ -14,7 +14,6 @@ const Profile = () => {
         const profileData = await fetch("http://localhost:3001/users/" + params.userId);
         const getprofiledata = await profileData.json();
         setprofiledata([getprofiledata]);
-        console.warn(getprofiledata)
         };
 
         getUserID();
@@ -66,7 +65,7 @@ const Profile = () => {
 
               <h4 className="md:text-1xl text-1xl md:font-medium  md:leading-relaxed text-[#606060] mt-2 mb-2">
                
-              {profiledata.map((user)=>(<span>{user.userInfo.map((info)=>(<span>{info.city['value']} </span>))}</span>))}, UK
+              {profiledata.map((user)=>(<span>{user.userInfo.map((info)=>(<span>{info.city.label} </span>))}</span>))}, UK
               </h4>
               {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.description} </p>))}</p>))}
               
@@ -83,10 +82,10 @@ const Profile = () => {
               {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.skills} </p>))}</p>))}
               </p>
               <p className="rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
-              {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.city['value']} </p>))}</p>))}
+              {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.city.label} </p>))}</p>))}
               </p>
               <p className="rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
-                £30 ph
+                {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>£{info.cost} ph</p>))}</p>))} 
               </p>
               <p className="rounded-lg w-1/5 bg-none shadow-xl pl-2 py-2">
                 4 stars +

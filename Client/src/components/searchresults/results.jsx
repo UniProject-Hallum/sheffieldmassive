@@ -15,10 +15,9 @@ const Results = () => {
     const [results, setresults] = useState([]);
     const getserachdata = (data) =>{
         setsearchdata(data)
-        console.log(data)
+        //console.log(data)
     }
     const params = useParams();
-    // console.log(params.SkillValue)
 
     useEffect(() => {
         const getUserID = async () => {
@@ -48,7 +47,7 @@ const Results = () => {
                             </div>
                             <div className='w-4/5 md:px-16'>
                             <h2 className='font-bold md:text-3xl text-1xl md:font-medium pl-2 md:leading-relaxed bg-[#ceeaf2] w-3/4 text-[#606060]'>{getuser.username}</h2>
-                            { getuser.userInfo.map((info)=>(<h4 className='font-bold md:text-1xl text-1xl md:font-medium  md:leading-relaxed text-[#606060] mt-2 mb-2'>{info.city['value']} , UK</h4>))}
+                            { getuser.userInfo.map((info)=>(<h4 className='font-bold md:text-1xl text-1xl md:font-medium  md:leading-relaxed text-[#606060] mt-2 mb-2'>{info.city['label']} , UK</h4>))}
                                 
                                 { getuser.userInfo.map((info)=>(<p>{info.description} <a href={user ? "/profile/"+getuser._id : "/login"}><span className='text-[#000000] hover:text-[#fccc35]'>Read More ....</span></a></p>))}
                                 
