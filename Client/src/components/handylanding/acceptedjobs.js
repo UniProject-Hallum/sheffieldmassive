@@ -1,21 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const acceptedjobs = () => {
-    return (
-        <div className="mx-20 py-10 border-2 rounded-lg bg-[#ceeaf2] my-10">
-        <div className='text-3xl font-bold mx-24'>Accepted Jobs</div>
-        
-        <div className='bg-[#fff] rounded-2xl shadow-xl p-16 z-10 mt-4 mx-40'>
-            Jobs here if accepted in section above 
-
+const Acceptedjobs = () => {
+  return (
+    <div>
+      <div className=" max-w-md m-10 max p-6 bg-white border border-gray-200 rounded-lg shadow-lg ">
+        <div className="">
+          <h3 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white  ">
+            Accepted Jobs
+          </h3>
         </div>
-        
-        </div>
+      </div>
+    </div>
+  );
+};
 
-        
-        
-
-    )       
-}
-
-export default acceptedjobs
+export default Acceptedjobs;
