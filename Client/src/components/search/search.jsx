@@ -1,7 +1,8 @@
 import axios from 'axios';
 import {React,useReducer,useState} from 'react'
 import { Link } from "react-router-dom";
-import City from "../../staticData/gb.json";
+import City from '../../staticData/gb.json'
+
 
 const Search = (props) => {
     const [SkillValue, setSkillValue] = useState('');
@@ -40,7 +41,7 @@ const Search = (props) => {
     <div>
         <div className='sm:bg-[#ceeaf2] sm:block hidden bg-[#fff] p-20 sm:mt-7 relative '></div>
         <div className='bg-gray-50  flex items-center justify-center'>
-            <div className='text-center sm:text-left sm:bg-[#fff] bg-[#ceeaf2] rounded-2xl shadow-xl p-20 relative z-10 
+            <div className='sm:bg-[#fff] bg-[#ceeaf2] rounded-2xl shadow-xl p-20 relative z-10 
             sm:-mt-20 mt-4 flex item-center justify-center w-4/5'>
                 <form action=""  className='w-full'>
                     <div className='sm:flex item-center justify-center mb-4'>
@@ -76,21 +77,13 @@ const Search = (props) => {
                     
                 </form>
             </div>
-            <Link to={"/search"}>
-              <button
-                onClick={searchHandle}
-                type="submit"
-                className="bg-[#fccc35] rounded-xl w-full py-2 hover:bg-[#ceeaf2] hover:scale-103"
-              >
-                Search
-              </button>
-            </Link>
-          
         </div>
-      
-      <div className="h-4 relative mb-0"></div>
+        <div className='h-4 relative mb-0'>
+       
+            
+        </div>  
     </div>
-  );
-};
+  )
+}
 
-export default Search;
+export default Search
