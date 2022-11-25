@@ -4,7 +4,7 @@ import React from "react";
 
 function Header() {
   const navigate = useNavigate();
-  const user = useUser();
+  const user = useUser(); 
   let isLoggedIn = false;
 
   const logout = () => {
