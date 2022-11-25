@@ -13,8 +13,8 @@ const GetAllUsers =async (req, res) => {
 
 const GetUserById =async (req, res) => {
     try{
-        const user = await users.findOne(req.param.id);
-        res.json(user)
+        const getuser = await users.findById(req.params.id);
+        res.json(getuser)
     }catch (e){
         res.json({ message: e })            
     }
@@ -34,8 +34,9 @@ const SearchUser = async (req, res) =>{
         const searchUser = await users.find({
             "$or":[
 
-                {"userInfo.skills":{$regex:req.params.user}},
-                {"userInfo.city":{$regex:req.params.email}}
+                {"userInfo.skills":{$regex:req.params.skill}},
+                {"userInfo.city":{$regex:req.params.city}},
+                {"userInfo.cost":{ $lte :req.params.cost}},
             ]
         });
         res.json(searchUser)

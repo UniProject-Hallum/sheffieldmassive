@@ -1,4 +1,5 @@
 import express from 'express';
+
 import userLogin from '../controllers/UserLogin.js';
 import userRegistration from '../controllers/UserRegistration.js';
 import cookieParser from "cookie-parser"
@@ -23,9 +24,9 @@ app.post('/api/register',userRegistration);
 
 
 app.get('/users', GetAllUsers);
-app.get('/user/:id',GetUserById);
-app.patch('/user/:id',UpdateUser);
-app.get('/Search/:user&:email',SearchUser);
+app.get('/users/:id',GetUserById);
+app.patch('/user/:userid',UpdateUser);
+app.get('/Search/:skill&:city&:cost',SearchUser);
 app.delete('/delete/:id',deleteUser);
 // app.get("/handy", handyAuth, (req, res) => res.send("Admin Route"));
 // app.get("/customer", customerAuth, (req, res) => res.send("User Route"));
