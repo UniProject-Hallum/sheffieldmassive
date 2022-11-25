@@ -37,22 +37,6 @@ const Results = () => {
       <Search onClick={getserachdata} />
       <div>
         <div>
-<<<<<<< HEAD
-          {searchdata.map((getuser) => (
-            <div className="flex items-center justify-center mt-6">
-              <div className="flex rounded shadow-lg shadow-gray-600 p-5 w-4/5">
-                <div className="w-1/5">
-                  <img
-                    className="rounded-full h-52 w-52 ml-6"
-                    src={handyman}
-                    alt=""
-                  />
-                </div>
-                <div className="w-4/5 md:px-16">
-                  <h2 className="font-bold md:text-3xl text-1xl md:font-medium pl-2 md:leading-relaxed bg-[#ceeaf2] w-3/4 text-[#606060]">
-                    {getuser.username}
-                  </h2>
-=======
             <div>
                 { 
                 results.map((getuser)=> (
@@ -72,7 +56,6 @@ const Results = () => {
                     </div>
                 )
                     
->>>>>>> 2fe547f5a3909c611ee7bc3496674b5fa6fe8472
 
                   <h4 className="font-bold md:text-1xl text-1xl md:font-medium  md:leading-relaxed text-[#606060] mt-2 mb-2">
                     Manchester , UK
