@@ -73,7 +73,7 @@ const Results = () => {
                 </div>
               </div>
             </div>
-          ))}
+          )}
         </div>
         <div className="flex items-center justify-center mt-6">
           <div className="flex rounded shadow-lg shadow-gray-600 p-5 w-4/5">
