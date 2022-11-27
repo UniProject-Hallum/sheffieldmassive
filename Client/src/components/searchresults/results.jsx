@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState, useReducer } from "react";
 import Header from "../header/Header";
-import Search from "../search/search";
-import Footer from "../footer/footer";
+import Search from "../footer/Footer";
+import Footer from "../footer/Footer";
 import handyman from "../../assets/3.jpg";
 import { Link, useParams } from "react-router-dom";
 import { useUser } from "../../auth/useUser";
