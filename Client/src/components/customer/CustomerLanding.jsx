@@ -17,6 +17,7 @@ const CustomerLanding = () => {
     <div>
       <Header />
       <Search />
+      Welcome Back - insert name
         {/* <div> 
           <h2 className="flex flex-wrap items-center justify-center md:text-6xl md:font-medium">
           {welcomeMessage + " " + user.username} !{" "}
