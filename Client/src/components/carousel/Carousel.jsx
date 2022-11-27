@@ -10,7 +10,7 @@ import SkillCarousel from 'simple-react-carousel';
 
 const Carousel = () => {
   return (
-    <div className= 'h-64 lg:mx-60 py-5 font-bold text-center text-xl container-mx-auto'>
+    <div className= 'h-64 lg:mx-96 py-5 font-bold text-center text-xl container-mx-auto'>
       Services We Offer
       <br></br>
     <SkillCarousel 
