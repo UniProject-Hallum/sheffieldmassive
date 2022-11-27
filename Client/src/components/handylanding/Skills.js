@@ -10,29 +10,22 @@ import { useNavigate } from "react-router-dom";
 
 
 function Skills() {
-  const [emailValue, setEmailValue] = useState();
+  let userData = useUser();
+  const [user, setUser]= useState(userData)
+  const [emailValue, setEmailValue] = useState(user.email);
   const [isShown, setIsShown] = useState(false);
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [error, setError] = useState(null);
+  const [selectedOptions, setSelectedOptions] = useState(user.userInfo.skills);
   const optionList = getSkills();
   const [token, setToken] = useToken();
-  const [descriptionValue, setDescriptionValue] = useState();
-  const [selectedCity, setSelectedCity] = useState();
-  const [costValue, setCostValue] = useState("");
+  const [descriptionValue, setDescriptionValue] = useState(user.userInfo.description);
+  const [selectedCity, setSelectedCity] = useState(user.userInfo.city);
+  const [costValue, setCostValue] = useState(user.userInfo.cost);
   const citiesList = getCities();
-  const navigate = useNavigate();
-
-  let user = useUser();
-
-  console.log("befroe"+user)
-  console.log("After"+user)
-
   let listOfSkills = user.userInfo.skills;
   let ListOfCities = [];
-  
-  
 
   let welcomeMessage = "Welcome Back ";
-  // console.log(user.userInfo[0].city.value[0])
   const lat = parseFloat(user.userInfo.city.value[0]);
   const lng = parseFloat(user.userInfo.city.value[1]);
 
@@ -59,6 +52,8 @@ function Skills() {
 
   }
 
+  
+
   const handleConfirm = async() => {
       try {   
           let data;
@@ -71,28 +66,20 @@ function Skills() {
             cost: costValue,
             acceptedJobs: user.userInfo.acceptedJobs,
             requestedJobs: user.userInfo.requestedJobs,
-          };
-    
+          };    
           console.log("this is user info :  " + JSON.stringify(userInfo));
           const res= await axios.patch('http://localhost:3001/user/'+user.id, {
           email: emailValue, userInfo,id : user.id
           
-            });
-          
+            });       
           data = res.data;
-
           setToken(data);
-          
-
           const encodedPayload = data.split(".")[1];
-          user = JSON.parse(atob(encodedPayload));
-          console.log(atob(encodedPayload))
-          console.log("useer payloa"+ user.userInfo.description)
-          navigate(0);        
+          setUser(JSON.parse(atob(encodedPayload)));
         setIsShown((current) => !current);
         
       } catch (e) {
-        console.error("There was an error!", e.response.data.message);
+        console.error("There was an error!", e);
        
       }
       
@@ -113,9 +100,13 @@ function Skills() {
         <h3 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white  ">
           My Proflie
         </h3>
+
+
       </div>
 
       <div className="flex justify-end">
+
+        
         {/* buttons */}
         <div>
           {isShown === false && (
@@ -215,7 +206,7 @@ function Skills() {
             <textarea
               required
               className="p-2 w-full h-32 rounded-xl border"
-              placeholder={user.userInfo["description"]}
+              value={descriptionValue}
               onChange={(e) => setDescriptionValue(e.target.value)}
               name="description"
             />
@@ -228,7 +219,7 @@ function Skills() {
               className="p-2 rounded-xl border"
               type="email"
               name="email"
-              placeholder={user.email}
+              value={emailValue}
               onChange={(e) => setEmailValue(e.target.value)}
             />
 
@@ -251,6 +242,7 @@ function Skills() {
               className="p-2 mt-2 rounded-xl border"
               type="number"
               name="name"
+              value={costValue}
               placeholder="price/hr"
               onChange={(e) => setCostValue(e.target.value)}
             />

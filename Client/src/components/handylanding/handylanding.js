@@ -30,14 +30,16 @@ const Handylanding = () => {
         <div>
           <Skills />
         </div>
+        
+        <div className=" ">
+          <Jobrequests className=""></Jobrequests>
+        </div>
 
         <div className=" ">
           <Acceptedjobs className=""></Acceptedjobs>
         </div>
 
-        <div className=" ">
-          <Jobrequests className=""></Jobrequests>
-        </div>
+        
       </div>
     </div>
   );
