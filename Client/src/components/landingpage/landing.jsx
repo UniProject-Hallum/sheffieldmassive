@@ -4,6 +4,7 @@ import Search from "../search/search";
 import Slide from "../slider/slide";
 import Footer from "../footer/Footer";
 import Card from "../cards/Card";
+import Carousel from "../carousel/Carousel";
 
 const Landing = () => {
   return (
@@ -11,6 +12,7 @@ const Landing = () => {
       <Header />
       <Search />
       <Slide />
+      <Carousel />
       <Card />
       <Footer />
     </div>

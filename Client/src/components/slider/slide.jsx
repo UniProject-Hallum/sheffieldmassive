@@ -34,9 +34,6 @@ const slide = () => {
           </div>
         </div>
 
-        <div className="p-10">
-          <img className="" src={handyman} alt="" />
-        </div>
     </section>
   );
 };
