@@ -5,20 +5,34 @@ import { getSkills, getCities } from "../../staticData/Data";
 import handyman from "../../assets/2.png";
 import Map from "../Map/Map";
 import axios from "axios";
+import useToken from "../../auth/useToken";
+import { useNavigate } from "react-router-dom";
+
 
 function Skills() {
   const [emailValue, setEmailValue] = useState();
   const [isShown, setIsShown] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
-  let user = useUser();
   const optionList = getSkills();
+  const [token, setToken] = useToken();
   const [descriptionValue, setDescriptionValue] = useState();
   const [selectedCity, setSelectedCity] = useState();
   const [costValue, setCostValue] = useState("");
   const citiesList = getCities();
+  const navigate = useNavigate();
+
+  let user = useUser();
+
+  console.log("befroe"+user)
+  console.log("After"+user)
+
   let listOfSkills = user.userInfo.skills;
   let ListOfCities = [];
+  
+  
+
   let welcomeMessage = "Welcome Back ";
+  // console.log(user.userInfo[0].city.value[0])
   const lat = parseFloat(user.userInfo.city.value[0]);
   const lng = parseFloat(user.userInfo.city.value[1]);
 
@@ -45,37 +59,48 @@ function Skills() {
 
   }
 
-  const handleConfirm = 
-    async() => {
-      let userinfo = {
-        description: descriptionValue,
-        skills: selectedOptions,
-        city: selectedCity,
-        cost: costValue,
-      };
-
-      console.log("this is user info :  " + JSON.stringify(userinfo));
-      await axios.patch("http://localhost:3001/user/"+user.id, {
-      email: emailValue,
-      userInfo: userinfo,
-        });
-      
-      
-              
-    setIsShown((current) => !current);
-      }
-   
-    // 👇️ toggle shown state
+  const handleConfirm = async() => {
+      try {   
+          let data;
+          console.log(user.userInfo.gender) 
+          let userInfo = {
+            description: descriptionValue,
+            gender: user.userInfo.gender,
+            skills: selectedOptions,
+            city: selectedCity,
+            cost: costValue,
+            acceptedJobs: user.userInfo.acceptedJobs,
+            requestedJobs: user.userInfo.requestedJobs,
+          };
     
-  
+          console.log("this is user info :  " + JSON.stringify(userInfo));
+          const res= await axios.patch('http://localhost:3001/user/'+user.id, {
+          email: emailValue, userInfo,id : user.id
+          
+            });
+          
+          data = res.data;
 
+          setToken(data);
+          
+
+          const encodedPayload = data.split(".")[1];
+          user = JSON.parse(atob(encodedPayload));
+          console.log(atob(encodedPayload))
+          console.log("useer payloa"+ user.userInfo.description)
+          navigate(0);        
+        setIsShown((current) => !current);
+        
+      } catch (e) {
+        console.error("There was an error!", e.response.data.message);
+       
+      }
+      
+      }
+  
   const handleClick = (event) => {
-    // 👇️ toggle shown state
 
     setIsShown((current) => !current);
-
-    // 👇️ or simply set it to true
-    // setIsShown(true);
   };
 
   function handleSelectCity(data) {
@@ -176,6 +201,7 @@ function Skills() {
             <p>Please Select all you Skills</p>
 
             <Select
+              required
               className="mt-2"
               options={optionList}
               placeholder="Select skills"
@@ -222,7 +248,6 @@ function Skills() {
             </h6>
             <input
               required
-              value={user.userInfo.cost}
               className="p-2 mt-2 rounded-xl border"
               type="number"
               name="name"

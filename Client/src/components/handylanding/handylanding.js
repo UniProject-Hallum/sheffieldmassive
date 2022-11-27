@@ -9,12 +9,6 @@ const Handylanding = () => {
   const user = useUser();
   let welcomeMessage = "Welcome Back ";
 
-  const lat = parseFloat(user.userInfo.city.value[0]);
-  const lng = parseFloat(user.userInfo.city.value[1]);
-
-  console.log(lat, lng);
-  const location = { lat, lng };
-
   return (
     <div>
       <Header />

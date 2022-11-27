@@ -2,7 +2,7 @@ import Login from "./components/loginandregister/Login";
 import Register from "./components/loginandregister/Register";
 import Home from "./components/landingpage/landing";
 import Header from "./components/header/Header";
-import Search from "./components/searchresults/results";
+import Search from "./components/searchresults/Results";
 import Profile from "./components/profile/profile";
 import Contact from "./components/contact/contact";
 import PrivateRoutes from "./auth/PrivateRoutes";
