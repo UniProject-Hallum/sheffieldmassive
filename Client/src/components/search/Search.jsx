@@ -91,7 +91,7 @@ const Search = (props) => {
               </select>
             </div>
             <Link
-              to={"/search/" + SkillValue + "&" + CityValue + "&" + costValue}
+              to={SkillValue ? "/search/" + SkillValue + "&" + CityValue + "&" + costValue : "/"}
             >
               <button
                 type="submit"
