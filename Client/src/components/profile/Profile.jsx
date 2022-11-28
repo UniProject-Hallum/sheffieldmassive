@@ -84,14 +84,14 @@ const Profile = () => {
         <hr className="border-2 bg-gray-400" />
         <div className="flex item-center justify-center mt-2">
           <div className="w-4/5">
-            <div className="flex py-3 mt-7">
+            <div className="md:flex py-3 mt-7 text-center ">
               <p className="rounded-lg d-block w-full md:w-1/5 bg-none shadow-xl pl-2 md:mr-3 py-2">
               {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.skills.map((label)=>(<p>{label.label}</p>))} </p>))}</p>))}
               </p>
-              <p className="rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
+              <p className="rounded-lg md:w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
               {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.city.label} </p>))}</p>))}
               </p>
-              <p className="rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
+              <p className="rounded-lg md:w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
                 {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>£{info.cost} ph</p>))}</p>))} 
               </p>
             </div>

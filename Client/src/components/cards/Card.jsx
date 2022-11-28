@@ -40,7 +40,7 @@ const Card = () => {
             {data.username}
           </h3>
           <div class="content-center flex item-center justify-center flex-row text-center place-items-center">
-            <div>
+            <div className="">
               <svg
                 className="w-6 h-6"
                 fill="yellow"
