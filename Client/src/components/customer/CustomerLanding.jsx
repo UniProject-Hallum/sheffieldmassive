@@ -7,6 +7,7 @@ import Carousel from "../carousel/Carousel";
 import { useUser } from "../../auth/useUser";
 
 const CustomerLanding = () => {
+ // Welcome message with user name 
   const user = useUser();
   let welcomeMessage = "Welcome Back ";
 
