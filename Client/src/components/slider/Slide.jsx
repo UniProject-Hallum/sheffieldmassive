@@ -10,7 +10,7 @@ const slide = () => {
         
             <div className='w-4/5 md:3/5'>
               <div>
-                <h4 className='w-3/5 h-9 p-2 pt-8 lg:p-10 float-left font-sans-serif font-bold text-xs lg:w-full  md:text-3xl lg:font-medium  md:leading-snug'>Helping you find the right person for any job</h4>
+                <h4 className='w-3/5 h-9 p-2 pt-8 lg:p-10 float-left font-sans-serif font-bold text-xs lg:w-full  md:text-3xl lg:font-medium  md:leading-snug mb-10'>Helping you find the right person for any job</h4>
                 <div className='w-2/5 float-left lg:hidden '>
                   <img className='' src={handyman} alt="" />
                 </div>
