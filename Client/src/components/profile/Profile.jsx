@@ -18,8 +18,8 @@ const Profile = () => {
         "http://localhost:3001/users/" + params.userId
       );
       const getprofiledata = await profileData.json();      
-      const lat = parseFloat(getprofiledata.userInfo.city.value[0])
-      const lng = parseFloat(getprofiledata.userInfo.city.value[1])
+      const lat = parseFloat(getprofiledata.userInfo[0].city.value[0])
+      const lng = parseFloat(getprofiledata.userInfo[0].city.value[1])
       const getlocation = { lat, lng };
       setprofiledata([getprofiledata]);
       setlocation(getlocation)
@@ -85,17 +85,14 @@ const Profile = () => {
         <div className="flex item-center justify-center mt-2">
           <div className="w-4/5">
             <div className="flex py-3 mt-7">
-              <p className="rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
-              {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.skills.label} </p>))}</p>))}
+              <p className="rounded-lg d-block w-full md:w-1/5 bg-none shadow-xl pl-2 md:mr-3 py-2">
+              {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.skills.map((label)=>(<p>{label.label}</p>))} </p>))}</p>))}
               </p>
               <p className="rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
               {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.city.label} </p>))}</p>))}
               </p>
               <p className="rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
                 {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>£{info.cost} ph</p>))}</p>))} 
-              </p>
-              <p className="rounded-lg w-1/5 bg-none shadow-xl pl-2 py-2">
-                4 stars +
               </p>
             </div>
             <h4 className="font-bold text-2xl md:font-medium  md:leading-relaxed mt-7 mb-7">
@@ -113,16 +110,14 @@ const Profile = () => {
               <img className="rounded-lg" src={handyman} alt=""></img>
             </div>
 
-            <div class="columns-2 py-7 mt-5">
+            <div class="py-7 mt-5">
               <div class="col-span-1 container-mx-auto">
                 <h1 class="flex grow text-2xl font-semibold py-5">Location</h1>
-              </div>
-
-              <div class="col-span-1 container-mx-auto">
-              <div className="mt-2 h-48">
+                <div className="mt-2 h-48">
                 <Map location={location} />
               </div>
               </div>
+
             </div>
             <div class="container-mx-auto place-item-center">
             </div>

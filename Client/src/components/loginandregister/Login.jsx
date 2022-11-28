@@ -41,7 +41,7 @@ const Login = () => {
           <h2 className="font-bold text-2xl text-[#606060]">Login</h2>
           <p className="text-sm mt-4 text-[#606060]">
             {" "}
-            If you already a memeber, easily login
+            If you already a member, easily login
           </p>
           {errorMessage && (
             <div className="fail p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800">

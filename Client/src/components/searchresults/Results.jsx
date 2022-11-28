@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState, useReducer } from "react";
 import Header from "../header/Header";
-import Search from "../footer/Footer";
+import Search from "../search/Search";
 import Footer from "../footer/Footer";
 import handyman from "../../assets/3.jpg";
 import { Link, useParams } from "react-router-dom";
@@ -77,7 +77,6 @@ const Results = () => {
                 
                   {getuser.userInfo.map((info) => (
                     <p>
-                      {info.description}{" "}
                       
                       <a href={user ? "/profile/" + getuser._id : "/login"}>  
                       <div class='pt-10 float-right'><button className=" py-1 text-white bg-[#118AB2] px-5 border rounded-xl hover:bg-[#fccc35] hover:scale-110">View</button></div>
