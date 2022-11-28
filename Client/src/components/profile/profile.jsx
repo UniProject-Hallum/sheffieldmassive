@@ -4,27 +4,31 @@ import Search from "../search/search";
 import Footer from "../footer/footer";
 import handyman from "../../assets/3.jpg";
 import Stars from "./Stars";
+import Map from "../Map/Map";
 
 import { Link, useParams } from "react-router-dom";
 
 const Profile = () => {
-    const [profiledata, setprofiledata] = useState([]);
-    const params = useParams();
-    useEffect(() => {
-        const getUserID = async () => {
-        const profileData = await fetch("http://localhost:3001/users/" + params.userId);
-        const getprofiledata = await profileData.json();
-        setprofiledata([getprofiledata]);
-        };
+  const [profiledata, setprofiledata] = useState([]);
+  const [location, setlocation] = useState([]);
+  const params = useParams();
+  
+  useEffect(() => {
+    const getUserID = async () => {
+      const profileData = await fetch(
+        "http://localhost:3001/users/" + params.userId
+      );
+      const getprofiledata = await profileData.json();      
+      const lat = getprofiledata.userInfo[0].city.value[0]
+      const lng = getprofiledata.userInfo[0].city.value[1]
+      const getlocation = { lat, lng };
+      setprofiledata([getprofiledata]);
+      setlocation(getlocation)
+    };
 
-        getUserID();
-    }, []);
-    
-    {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.city.label} </p>))}</p>))}
-     console.log(profiledata)
-     console.log(profiledata["username"])
-
-
+    getUserID();
+  }, []);
+ 
 
   return (
     <div>
@@ -41,6 +45,8 @@ const Profile = () => {
               />
             </div>
             <div className="w-4/5 md:px-16">
+              {/* {parseFloat(profiledata.userInfo.city.value[0])} */}
+              
             {profiledata.map((user)=>(<h2 className="font-semibold md:text-3xl text-1xl md:font-bold md:leading-relaxed w-3/4 text-black">
                 {user.username}
               </h2>))}  
@@ -114,6 +120,9 @@ const Profile = () => {
               </div>
 
               <div class="col-span-1 container-mx-auto">
+              <div className="mt-2 h-48">
+                <Map location={location} />
+              </div>
               </div>
             </div>
             <div class="container-mx-auto place-item-center">
@@ -125,7 +134,7 @@ const Profile = () => {
       <div className="py-8 flex-col">
       </div>
       <div className="mx-auto w-4/5">
-        <Link to={"/contact"}>
+        <Link to={"/contact/"+params.userId}>
           <button className="py-2 bg-[#ceeaf2] px-5 border rounded-xl  hover:bg-[#fccc35] hover:scale-110">
             Contact
           </button>
