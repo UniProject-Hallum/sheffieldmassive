@@ -10,7 +10,7 @@ const Acceptedjobs = () => {
           </h3>
         </div>
       </div>
-    </div>
+    </div> 
   );
 };
 

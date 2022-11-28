@@ -18,16 +18,14 @@ const Results = () => {
     //console.log(data)
   };
   const params = useParams();
-
+  const url_data = params.SkillValue.split('&')
   useEffect(() => {
     const getUserID = async () => {
       let results = await fetch(
         "http://localhost:3001/search/" +
           params.SkillValue +
           "&" +
-          params.CityValue +
-          "&" +
-          params.costValue
+          params.CityValue 
       );
 
       results = await results.json();
@@ -37,11 +35,18 @@ const Results = () => {
 
     getUserID();
   }, [ignore]);
+ 
+
 
   return (
     <div>
       <Header />
       <Search onClick={getserachdata} />
+      <div className='flex py-3 mt-7'>
+          <p className='rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2'>{url_data[0]}</p>
+          <p className='rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2'>{url_data[1]}</p>
+          <p className='rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2'>{params.CityValue}</p>
+      </div>
       <div>
         <div>
           {results.map((getuser) => (
