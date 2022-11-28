@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "../header/Header";
-import Search from "../search/search";
-import Slide from "../slider/slide";
+import Search from "../search/Search";
+import Slide from "../slider/Slide";
 import Footer from "../footer/Footer";
 import Card from "../cards/Card";
-import Carousel from "../carousel/Carousel";
+// import Carousel from "../carousel/Carousel";
 
 const Landing = () => {
   return (
@@ -12,7 +12,7 @@ const Landing = () => {
       <Header />
       <Search />
       <Slide />
-      <Carousel />
+      {/* <Carousel /> */}
       <Card />
       <Footer />
     </div>

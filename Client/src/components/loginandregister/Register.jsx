@@ -6,7 +6,6 @@ import axios from "axios";
 import Select from "react-select";
 import AsyncSelect from "react-select/async";
 import { getSkills, getCities } from "../../staticData/Data";
-import search from "../search/search"; 
 import man from "../../assets/man.png";
 import woman from "../../assets/woman.jpg";
 

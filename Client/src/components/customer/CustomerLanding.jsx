@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../header/Header";
-import Search from "../search/search";
+import Search from "../search/Search";
 import Footer from "../footer/Footer";
 import Card from "../cards/Card";
-import Carousel from "../carousel/Carousel";
+// import Carousel from "../carousel/Carousel";
 import { useUser } from "../../auth/useUser";
 
 const CustomerLanding = () => {
@@ -24,7 +24,7 @@ const CustomerLanding = () => {
           {welcomeMessage + " " + user.username} !{" "}
           </h2>
         </div> */}
-      <Carousel />
+      {/* <Carousel /> */}
       <Card />
       <Footer />
     </div>
