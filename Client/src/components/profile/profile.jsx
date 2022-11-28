@@ -19,8 +19,8 @@ const Profile = () => {
         "http://localhost:3001/users/" + params.userId
       );
       const getprofiledata = await profileData.json();      
-      const lat = parseFloat(getprofiledata.userInfo[0].city.value[0])
-      const lng = parseFloat(getprofiledata.userInfo[0].city.value[1])
+      const lat = parseFloat(getprofiledata.userInfo.city.value[0])
+      const lng = parseFloat(getprofiledata.userInfo.city.value[1])
       const getlocation = { lat, lng };
       setprofiledata([getprofiledata]);
       setlocation(getlocation)
