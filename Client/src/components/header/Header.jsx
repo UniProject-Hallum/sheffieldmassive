@@ -27,7 +27,7 @@ function Header() {
         </a>
         <div className="sm:flex pt-5">
           {isLoggedIn ? (
-            <button onClick={logout} className="font-medium">
+            <button onClick={logout} className="font-medium py-1 bg-[#fccc35] px-5 border rounded-xl  hover:bg-[#606060] hover:text-white hover:scale-110">
               {" "}
               logout
             </button>

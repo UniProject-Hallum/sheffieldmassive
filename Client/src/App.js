@@ -25,7 +25,7 @@ function App() {
           <Route element= {<PrivateRoutes/>}>
             <Route exact path='/profile/:userId' element={<Profile/>} />
             <Route path='/handyman' element={<Handy/>} />
-            <Route path='/contact' element={<Contact/>} />
+            <Route path='/contact/:userId' element={<Contact/>} />
           </Route>
           
       </Routes>
