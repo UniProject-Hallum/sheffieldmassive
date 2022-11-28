@@ -42,6 +42,18 @@ const Results = () => {
     <div>
       <Header />
       <Search onClick={getserachdata} />
+  
+            <div className="flex justify-center py-3 mt-7">
+              <p className="rounded-lg w-1/5 bg-[#D9D9D9] shadow-xl pl-2 mr-3 py-2">
+              {params.SkillValue}
+              </p>
+              <p className="rounded-lg w-1/5 bg-[#D9D9D9] shadow-xl pl-2 mr-3 py-2">
+              
+              </p>
+              <p className="rounded-lg w-1/5 bg-[#D9D9D9] shadow-xl pl-2 mr-3 py-2">
+              {params.costValue} 
+              </p>
+            </div>
       <div>
         <div>
           {results.map((getuser) => (
@@ -77,7 +89,7 @@ const Results = () => {
                 </div>
               </div>
             </div>
-          )}
+          ))}
         </div>
       </div>
       <Footer />

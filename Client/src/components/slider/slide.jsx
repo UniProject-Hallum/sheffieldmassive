@@ -24,18 +24,6 @@ const slide = () => {
                 <img className='' src={handyman} alt="" />
             </div>
             
-
-          <div className="p-10">
-            <a href="/register">
-              <button className="p-3 bg-[#ceeaf2] px-5 border rounded-xl  hover:bg-[#fccc35] hover:scale-110">
-                Register
-              </button>
-            </a>
-          </div>
-        </div>
-
-        <div className="p-10">
-          <img className="" src={handyman} alt="" />
         </div>
     </section>
   );

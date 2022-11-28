@@ -20,6 +20,7 @@ const Profile = () => {
         getUserID();
     }, []);
     
+    {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.city.label} </p>))}</p>))}
      console.log(profiledata)
      console.log(profiledata["username"])
 
@@ -80,7 +81,7 @@ const Profile = () => {
           <div className="w-4/5">
             <div className="flex py-3 mt-7">
               <p className="rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
-              {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.skills} </p>))}</p>))}
+              {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.skills.label} </p>))}</p>))}
               </p>
               <p className="rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
               {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.city.label} </p>))}</p>))}
