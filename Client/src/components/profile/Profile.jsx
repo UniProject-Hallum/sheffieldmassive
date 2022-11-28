@@ -34,16 +34,16 @@ const Profile = () => {
         <Header />
         
       <div className="">
-        <div className="flex items-center justify-center mt-7 shadow-xl">
+        <div className="md:flex items-center justify-center mt-7 shadow-xl">
           <div className="flex p-7 w-4/5 ">
-            <div className="w-1/5">
+            <div className="w-3/8 md:w-1/5 ">
               <img
-                className="rounded-full h-52 w-52 ml-6"
+                className="rounded-full max-w-md w-20 h-20 md:h-52 md:w-52 ml-6"
                 src={handyman}
                 alt=""
               />
             </div>
-            <div className="w-4/5 md:px-16">
+            <div className="w-5/8 ml-2 md:ml-10 md:w-4/5 md:px-16">
               {/* {parseFloat(profiledata.userInfo.city.value[0])} */}
               
             {profiledata.map((user)=>(<h2 className="font-semibold md:text-3xl text-1xl md:font-bold md:leading-relaxed w-3/4 text-black">
@@ -74,18 +74,24 @@ const Profile = () => {
                
               {profiledata.map((user)=>(<span>{user.userInfo.map((info)=>(<span>{info.city.label} </span>))}</span>))}, UK
               </h4>
-              {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.description} </p>))}</p>))}
-              
-                                
+              <div className='md:block hidden'>
+              {profiledata.map((user)=>(<p >{user.userInfo.map((info)=>(<p>{info.description} </p>))}</p>))}
               <Stars />
+              </div>                  
+              
             </div>
           </div>
+          <div className='flex item-center justify-center  text-center md:hidden'>
+            {profiledata.map((user)=>(<p >{user.userInfo.map((info)=>(<p>{info.description} </p>))}</p>))}
+            <Stars />
+          </div>
+          
         </div>
         <hr className="border-2 bg-gray-400" />
         <div className="flex item-center justify-center mt-2">
           <div className="w-4/5">
             <div className="md:flex py-3 mt-7 text-center ">
-              <p className="rounded-lg d-block w-full md:w-1/5 bg-none shadow-xl pl-2 md:mr-3 py-2">
+              <p className="rounded-lg md:w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
               {profiledata.map((user)=>(<p>{user.userInfo.map((info)=>(<p>{info.skills.map((label)=>(<p>{label.label}</p>))} </p>))}</p>))}
               </p>
               <p className="rounded-lg md:w-1/5 bg-none shadow-xl pl-2 mr-3 py-2">
