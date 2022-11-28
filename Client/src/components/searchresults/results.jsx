@@ -42,10 +42,10 @@ const Results = () => {
     <div>
       <Header />
       <Search onClick={getserachdata} />
-      <div className='flex py-3 mt-7'>
-          <p className='rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2'>{url_data[0]}</p>
-          <p className='rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2'>{url_data[1]}</p>
-          <p className='rounded-lg w-1/5 bg-none shadow-xl pl-2 mr-3 py-2'>{params.CityValue}</p>
+      <div className='flex justify-center py-3 mt-7'>
+          <p className='rounded-lg w-1/5 bg-[#D9D9D9] shadow-xl pl-2 mr-3 py-2'>{url_data[0]}</p>
+          <p className='rounded-lg w-1/5 bg-[#D9D9D9] shadow-xl pl-2 mr-3 py-2'>{url_data[1]}</p>
+          <p className='rounded-lg w-1/5 bg-[#D9D9D9] shadow-xl pl-2 mr-3 py-2'>{params.CityValue}</p>
       </div>
       <div>
         <div>
