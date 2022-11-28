@@ -35,8 +35,8 @@ const Profile = () => {
         <Header />
         
       <div className="">
-        <div className="flex items-center justify-center mt-7">
-          <div className="flex p-7 w-4/5 shadow-xl">
+        <div className="flex items-center justify-center mt-7 shadow-xl">
+          <div className="flex p-7 w-4/5 ">
             <div className="w-1/5">
               <img
                 className="rounded-full h-52 w-52 ml-6"
