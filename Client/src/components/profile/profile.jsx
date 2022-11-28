@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Header from "../header/Header";
 import Search from "../search/search";
-import Footer from "../footer/footer";
+import Footer from "../footer/Footer";
 import handyman from "../../assets/3.jpg";
 import Stars from "./Stars";
 import Map from "../Map/Map";
