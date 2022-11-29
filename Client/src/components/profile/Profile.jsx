@@ -34,11 +34,11 @@ const Profile = () => {
         <Header />
         
       <div className="">
-        <div className="md:flex items-center justify-center mt-7 shadow-xl">
+        <div className="md:flex items-center justify-center mt-7 shadow-xl bg-[#E0F0F5]">
           <div className="flex p-7 w-4/5 ">
             <div className="w-3/8 md:w-1/5 ">
               <img
-                className="rounded-full max-w-md w-20 h-20 md:h-52 md:w-52 ml-6"
+                className="ring-2 ring-black rounded-full max-w-md w-20 h-20 md:h-52 md:w-52 ml-6"
                 src={handyman}
                 alt=""
               />
@@ -46,7 +46,7 @@ const Profile = () => {
             <div className="w-5/8 ml-2 md:ml-10 md:w-4/5 md:px-16">
               {/* {parseFloat(profiledata.userInfo.city.value[0])} */}
               
-            {profiledata.map((user)=>(<h2 className="font-semibold md:text-3xl text-1xl md:font-bold md:leading-relaxed w-3/4 text-black">
+            {profiledata.map((user)=>(<h2 className="py-1 border-2 bg-white rounded-xl font-semibold md:text-3xl text-1xl pl-3 md:font-bold md:leading-relaxed w-3/4 text-black">
                 {user.username}
               </h2>))}  
               
@@ -131,7 +131,7 @@ const Profile = () => {
         </div>
       </div>
 
-      <div className="py-8 flex-col">
+      <div className="py-6 flex-col">
       </div>
       <div className="mx-auto w-4/5">
         <Link to={"/contact/"+params.userId}>
