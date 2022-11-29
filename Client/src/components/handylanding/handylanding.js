@@ -30,7 +30,7 @@ const Handylanding = () => {
         <div>
           <Skills />
         </div>
-        
+
         <div className=" ">
           <Jobrequests className=""></Jobrequests>
         </div>

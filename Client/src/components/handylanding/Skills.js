@@ -25,10 +25,13 @@ function Skills() {
   let listOfSkills = user.userInfo.skills;
   let ListOfCities = [];
 
+
   let welcomeMessage = "Welcome Back ";
+
+  // console.log(user.userInfo[0].city.value[0])
   const lat = parseFloat(user.userInfo.city.value[0]);
   const lng = parseFloat(user.userInfo.city.value[1]);
-
+ 
   const location = { lat, lng };
 
   for (let i = 0; i < 30; i++) {
@@ -72,7 +75,7 @@ function Skills() {
           email: emailValue, userInfo,id : user.id
           
             });       
-          data = res.data;
+          data = JSON.stringify(res.data);
           setToken(data);
           const encodedPayload = data.split(".")[1];
           setUser(JSON.parse(atob(encodedPayload)));

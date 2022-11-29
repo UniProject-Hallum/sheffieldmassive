@@ -22,7 +22,7 @@ const Register = () => {
   const navigate = useNavigate();
   const [selectedOptions, setSelectedOptions] = useState();
   const [selectedCity, setSelectedCity] = useState();
-  const [genderProfileValue, setGenderProfileValue] = useState("");
+  const [genderProfileValue, setGenderProfileValue] = useState(man);
   const [costValue, setCostValue] = useState("");
   let ListOfCities = [];
   const numberOfCities = 30;
@@ -59,6 +59,7 @@ const Register = () => {
         description: descriptionValue,
         gender: genderProfileValue,
         skills: values,
+        email: emailValue,
         city: selectedCity,
         cost: costValue,
         acceptedJobs: [],
