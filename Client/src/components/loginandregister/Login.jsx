@@ -27,7 +27,7 @@ const Login = () => {
       itoken = response.data;
       console.log(itoken);
       setToken(itoken);
-      navigate("/profile");
+      navigate("/");
     } catch (e) {
       setErrorMessage(e.response.data.message);
       console.error("There was an error!", e.response.data.message);
