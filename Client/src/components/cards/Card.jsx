@@ -18,7 +18,7 @@ const Card = () => {
 
     getUserID();
   }, []);
-  console.log(results);
+  // console.log(result.userInfo.cost);
   return (
     
     <div className="container-mx-auto p-7 space-x-5 flex item-center justify-center ">
@@ -69,7 +69,8 @@ const Card = () => {
         <div class="md:flex justify-center pb-3 text-black text-xs">
           <div class="text-center md:mr-3 md:border-r pr-3 mb-4">
             <h2>Price</h2>
-            {data.userInfo.map((cost)=>(<span>{cost.cost} ph</span>))} 
+            {/* {data.userInfo.map((cost)=>(<span>{cost.cost} ph</span>))}  */}
+            {data.userInfo.cost}
           </div>
           <div class="text-center">
             <h2>Reviews</h2>

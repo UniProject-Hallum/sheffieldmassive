@@ -7,7 +7,7 @@ const userSchema = new Schema({
     email: { type: String, unique: true },
     password: { type: String },
     role: { type: String, default: 'customer' },
-    userInfo: [],
+    userInfo: {type: Object},
     
 });
 

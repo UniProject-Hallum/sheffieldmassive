@@ -1,5 +1,7 @@
 import { FindAllUsers, FindUserByID } from "../database/UserDAO.js";
 import users from "../models/UserModel.js";
+import jwt from 'jsonwebtoken';
+import { get } from "mongoose";
 
 const GetAllUsers = async (req, res) => {
   try {
@@ -19,13 +21,36 @@ const GetUserById = async (req, res) => {
   }
 };
 
-const UpdateUser = async (req, res) => {
-  try {
-    const updateUser = await users.updateOne({ _id: req.params.userid });
-    res.json(updateUser);
-  } catch (e) {
-    res.json({ message: e });
-  }
+const UpdateUser = async (req, res) =>{
+    try{
+        const {email,userInfo,id}= req.body;
+        console.log( id)
+        const updateUser = await users.findByIdAndUpdate(id,{email,userInfo});
+        const getuser = await users.findById(id);
+        const maxAge = 60*60*3;
+
+        console.log("updated user"+updateUser);
+        console.log("get user"+getuser);
+
+        const token = jwt.sign({
+            id: id,
+            email: email,
+            username: getuser.username, 
+            role: getuser.role,
+            userInfo: updateUser.userInfo,
+        },
+            process.env.JWT_SECRET,{
+            expiresIn:maxAge,
+         });
+
+        console.log("this is the token" + token)
+
+         res.json(token);   
+        
+    }catch (e){
+        console.log(e)
+        res.json(e)            
+    }
 };
 
 const SearchUser = async (req, res) => {

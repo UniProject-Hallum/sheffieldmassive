@@ -9,12 +9,6 @@ const Handylanding = () => {
   const user = useUser();
   let welcomeMessage = "Welcome Back ";
 
-  const lat = parseFloat(user.userInfo.city.value[0]);
-  const lng = parseFloat(user.userInfo.city.value[1]);
-
-  console.log(lat, lng);
-  const location = { lat, lng };
-
   return (
     <div>
       <Header />
@@ -38,12 +32,14 @@ const Handylanding = () => {
         </div>
 
         <div className=" ">
-          <Acceptedjobs className=""></Acceptedjobs>
-        </div>
-
-        <div className=" ">
           <Jobrequests className=""></Jobrequests>
         </div>
+
+        {/* <div className=" ">
+          <Acceptedjobs className=""></Acceptedjobs>
+        </div> */}
+
+        
       </div>
     </div>
   );

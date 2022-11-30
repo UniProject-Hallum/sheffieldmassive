@@ -19,8 +19,8 @@ const UserLogin  =async (req, res) => {
         
         const userPassword= user.password;
         const username= user.username;
-        const userRole= user.role;
-        const userId = user._id;
+        const role= user.role;
+        const id = user._id;
         const userInfo= user.userInfo
 
         const passwordIsSame= await bcrypt.compare(password,userPassword);
@@ -35,7 +35,7 @@ const UserLogin  =async (req, res) => {
                 console.log("user item:    "+  user)
                 const maxAge = 60*60*3;
                 const token = jwt.sign({
-                    id:userId,email,username,role:userRole,userInfo
+                    id,email,username,role,userInfo
                 },process.env.JWT_SECRET,
                 {
                     expiresIn: maxAge,

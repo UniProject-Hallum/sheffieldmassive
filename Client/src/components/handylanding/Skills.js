@@ -5,23 +5,33 @@ import { getSkills, getCities } from "../../staticData/Data";
 import handyman from "../../assets/2.png";
 import Map from "../Map/Map";
 import axios from "axios";
+import useToken from "../../auth/useToken";
+import { useNavigate } from "react-router-dom";
+
 
 function Skills() {
-  const [emailValue, setEmailValue] = useState();
+  let userData = useUser();
+  const [user, setUser]= useState(userData)
+  const [emailValue, setEmailValue] = useState(user.email);
   const [isShown, setIsShown] = useState(false);
-  const [selectedOptions, setSelectedOptions] = useState([]);
-  let user = useUser();
+  const [error, setError] = useState(null);
+  const [selectedOptions, setSelectedOptions] = useState(user.userInfo.skills);
   const optionList = getSkills();
-  const [descriptionValue, setDescriptionValue] = useState();
-  const [selectedCity, setSelectedCity] = useState();
-  const [costValue, setCostValue] = useState("");
+  const [token, setToken] = useToken();
+  const [descriptionValue, setDescriptionValue] = useState(user.userInfo.description);
+  const [selectedCity, setSelectedCity] = useState(user.userInfo.city);
+  const [costValue, setCostValue] = useState(user.userInfo.cost);
   const citiesList = getCities();
   let listOfSkills = user.userInfo.skills;
   let ListOfCities = [];
+  
+
   let welcomeMessage = "Welcome Back ";
+
+  console.log(user.userInfo.city.value[0])
   const lat = parseFloat(user.userInfo.city.value[0]);
   const lng = parseFloat(user.userInfo.city.value[1]);
-
+ 
   const location = { lat, lng };
 
   for (let i = 0; i < 30; i++) {
@@ -30,6 +40,7 @@ function Skills() {
       label: citiesList[i]["city"],
     });
   }
+
 
   let renderList = listOfSkills.map((item, i) => (
     <div
@@ -45,37 +56,42 @@ function Skills() {
 
   }
 
-  const handleConfirm = 
-    async() => {
-      let userinfo = {
-        description: descriptionValue,
-        skills: selectedOptions,
-        city: selectedCity,
-        cost: costValue,
-      };
-
-      console.log("this is user info :  " + JSON.stringify(userinfo));
-      await axios.patch("http://localhost:3001/user/"+user.id, {
-      email: emailValue,
-      userInfo: userinfo,
-        });
-      
-      
-              
-    setIsShown((current) => !current);
-      }
-   
-    // 👇️ toggle shown state
-    
   
 
+  const handleConfirm = async() => {
+      try {   
+          let data;
+          console.log(user) 
+          let userInfo = {
+            description: descriptionValue,
+            gender: user.userInfo.gender,
+            skills: selectedOptions,
+            city: selectedCity,
+            cost: costValue,
+            acceptedJobs: user.userInfo.acceptedJobs,
+            requestedJobs: user.userInfo.requestedJobs,
+          };    
+          console.log("this is user info :  " + JSON.stringify(userInfo));
+          const res= await axios.patch('http://localhost:3001/user/'+user.id, {
+          email: emailValue, userInfo,id : user.id
+          
+            });       
+          data = JSON.stringify(res.data);
+          setToken(data);
+          const encodedPayload = data.split(".")[1];
+          setUser(JSON.parse(atob(encodedPayload)));
+        setIsShown((current) => !current);
+        
+      } catch (e) {
+        console.error("There was an error!", e);
+       
+      }
+      
+      }
+  
   const handleClick = (event) => {
-    // 👇️ toggle shown state
 
     setIsShown((current) => !current);
-
-    // 👇️ or simply set it to true
-    // setIsShown(true);
   };
 
   function handleSelectCity(data) {
@@ -88,9 +104,13 @@ function Skills() {
         <h3 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white  ">
           My Proflie
         </h3>
+
+
       </div>
 
       <div className="flex justify-end">
+
+        
         {/* buttons */}
         <div>
           {isShown === false && (
@@ -144,25 +164,25 @@ function Skills() {
             <h6 className="mb-3 mt-2 text-xl font-medium tracking-tight text-gray-900 dark:text-white">
               Description
             </h6>
-            {user.userInfo["description"]}
+            {descriptionValue}
 
             <h6 className="mb-3 mt-2 text-xl font-medium tracking-tight text-gray-900 dark:text-white">
               Email
             </h6>
-            {user.email}
+            {emailValue}
             <div className="flex mt-4">
               <div>
                 <h6 className="mb-3 text-xl font-medium tracking-tight text-gray-900 dark:text-white">
                   city
                 </h6>
-                {user.userInfo.city.label}
+                {selectedCity.label}
               </div>
 
               <div className="ml-28">
                 <h6 className="mb-3 text-xl font-medium tracking-tight text-gray-900 dark:text-white">
                   price/hr
                 </h6>
-                £{user.userInfo.cost}
+                £{costValue}
               </div>
             </div>
           </>
@@ -176,6 +196,7 @@ function Skills() {
             <p>Please Select all you Skills</p>
 
             <Select
+              required
               className="mt-2"
               options={optionList}
               placeholder="Select skills"
@@ -189,7 +210,7 @@ function Skills() {
             <textarea
               required
               className="p-2 w-full h-32 rounded-xl border"
-              placeholder={user.userInfo["description"]}
+              value={descriptionValue}
               onChange={(e) => setDescriptionValue(e.target.value)}
               name="description"
             />
@@ -202,7 +223,7 @@ function Skills() {
               className="p-2 rounded-xl border"
               type="email"
               name="email"
-              placeholder={user.email}
+              value={emailValue}
               onChange={(e) => setEmailValue(e.target.value)}
             />
 
@@ -222,10 +243,10 @@ function Skills() {
             </h6>
             <input
               required
-              value={user.userInfo.cost}
               className="p-2 mt-2 rounded-xl border"
               type="number"
               name="name"
+              value={costValue}
               placeholder="price/hr"
               onChange={(e) => setCostValue(e.target.value)}
             />

@@ -46,9 +46,7 @@ const UserRegistration =async (req, res) => {
             
 
             
-        //    newUser.token = token; 
-           
-           console.log('REGISTERED: '+ newUser) 
+        
            
            console.log("token: "+token) 
           

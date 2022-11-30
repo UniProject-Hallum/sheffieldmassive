@@ -6,7 +6,6 @@ import React from "react";
 const PrivateRoutes = () => {
   const user = useUser();
 
-  let location = useLocation();
 
   if (!user) return <Navigate to="/login" />;
   
