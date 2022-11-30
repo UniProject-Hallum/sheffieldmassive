@@ -3,14 +3,15 @@ import { useUser } from "./useUser";
 
 import React from "react";
 
-const PrivateRoutes = () => {
+const Redirect = () => {
   const user = useUser();
 
   let location = useLocation();
 
-  if (!user) return <Navigate to="/login" />;
-  
-  return <Outlet />;
+  if (user.role == 'handyman') return <Navigate to="/handyman" />;
+  if (user.role == 'customer') return <Navigate to="/user" />;
+
+ 
 };
 
-export default PrivateRoutes;
+export default Redirect;

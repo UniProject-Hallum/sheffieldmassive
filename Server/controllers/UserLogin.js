@@ -35,7 +35,7 @@ const UserLogin  =async (req, res) => {
                 console.log("user item:    "+  user)
                 const maxAge = 60*60*3;
                 const token = jwt.sign({
-                    userId,email,username,userRole,userInfo
+                    id:userId,email,username,role:userRole,userInfo
                 },process.env.JWT_SECRET,
                 {
                     expiresIn: maxAge,

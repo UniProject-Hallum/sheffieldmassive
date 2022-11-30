@@ -8,7 +8,7 @@ import Contact from "./components/contact/Contact";
 import PrivateRoutes from "./auth/PrivateRoutes";
 import Handy from "./components/handylanding/Handylanding"
 import CustomerLanding from "./components/customer/CustomerLanding";
-
+import Redirect from "./auth/Redirect";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -20,12 +20,14 @@ function App() {
           <Route path='/register' element={<Register/>} />
           <Route path='/search' element={<Search/>} />
           <Route path='/search/:SkillValue&:CityValue' element={<Search/>} />
-          <Route path='/user' element={<CustomerLanding/>} />
+          
           
           <Route element= {<PrivateRoutes/>}>
             <Route exact path='/profile/:userId' element={<Profile/>} />
             <Route path='/handyman' element={<Handy/>} />
             <Route path='/contact/:userId' element={<Contact/>} />
+            <Route path='/user' element={<CustomerLanding/>} />
+            <Route path='/redirect' element={<Redirect/>} />
           </Route>
           
       </Routes>

@@ -50,15 +50,18 @@ const Register = () => {
   const OnClickSignup = async () => {
     try {
       let itoken;
+      let userinfo=''
       let values = [];
-      selectedOptions.forEach((obj) => {
-        values.push({
-          label: obj["label"],
-          lng: obj["value"].lng,
-          lat: obj["value"].lat,
+      
+      if (roleValue == 'handyman'){
+        selectedOptions.forEach((obj) => {
+          values.push({
+            label: obj["label"],
+            lng: obj["value"].lng,
+            lat: obj["value"].lat,
+          });
         });
-      });
-      let userinfo = {
+       userinfo = {
         description: descriptionValue,
         gender: genderProfileValue,
         skills: values,
@@ -66,7 +69,7 @@ const Register = () => {
         cost: costValue,
         acceptedJobs: [],
         requestedJobs: [],
-      };
+      };}
 
       console.log("this is user info :  " + JSON.stringify(userinfo));
       const response = await axios.post(baseurl + "/api/register", {
@@ -79,12 +82,12 @@ const Register = () => {
       itoken = response.data;
       console.log(itoken);
       setToken(itoken);
-
-      if (roleValue == "handyman") {
-        navigate("/handyman");
-      } else {
-        navigate("/profile");
-      }
+      navigate('/redirect')
+      // if (roleValue == "handyman") {
+      //   navigate("/handyman");
+      // } else {
+      //   navigate("/user");
+      // }
     } catch (e) {
       console.error("There was an error!", e.response.data.message);
       setErrorMessage(e.response.data.message);
