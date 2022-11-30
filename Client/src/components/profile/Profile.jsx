@@ -56,7 +56,7 @@ const Profile = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="mt-2 w-6 h-6"
+                className="mt-2 w-6 h-6 md:float-left"
               >
                 <path
                   strokeLinecap="round"
@@ -81,7 +81,7 @@ const Profile = () => {
               
             </div>
           </div>
-          <div className='flex item-center justify-center  text-center md:hidden'>
+          <div className='p-4 item-center justify-center  text-center md:hidden'>
             {profiledata.map((user)=>(<p >{user.userInfo.map((info)=>(<p>{info.description} </p>))}</p>))}
             <Stars />
           </div>
