@@ -58,7 +58,7 @@ const Results = () => {
               <div className="flex rounded shadow-lg p-5 w-4/5 rounded-xl">
                 <div className="w-1/5 md:block hidden">
                   <img
-                    className="rounded-full h-52 w-52 ml-6"
+                    className="rounded-full shadow-xl h-52 w-52 ml-6"
                     src={handyman}
                     alt=""
                   />
