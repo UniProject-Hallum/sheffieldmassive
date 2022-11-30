@@ -33,11 +33,11 @@ const UpdateUser = async (req, res) =>{
         console.log("get user"+getuser);
 
         const token = jwt.sign({
-            id:getuser._id,
-            email: getuser.email,
+            id: id,
+            email: email,
             username: getuser.username, 
             role: getuser.role,
-            userInfo: userInfo,
+            userInfo: updateUser.userInfo,
         },
             process.env.JWT_SECRET,{
             expiresIn:maxAge,

@@ -10,7 +10,6 @@ export const useUser = () => {
     //jwt is made of 3 parts, we want the payload which is the 2nd
     const encodedPayload = token.split(".")[1];
     //returns javascript object
-    console.log("this is the user" + atob(encodedPayload));
     return JSON.parse(atob(encodedPayload));
   };
 

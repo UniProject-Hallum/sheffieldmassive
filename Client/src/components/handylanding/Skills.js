@@ -28,7 +28,7 @@ function Skills() {
 
   let welcomeMessage = "Welcome Back ";
 
-  // console.log(user.userInfo[0].city.value[0])
+  console.log(user.userInfo.city.value[0])
   const lat = parseFloat(user.userInfo.city.value[0]);
   const lng = parseFloat(user.userInfo.city.value[1]);
  
@@ -60,7 +60,7 @@ function Skills() {
   const handleConfirm = async() => {
       try {   
           let data;
-          console.log(user.userInfo.gender) 
+          console.log(user) 
           let userInfo = {
             description: descriptionValue,
             gender: user.userInfo.gender,
