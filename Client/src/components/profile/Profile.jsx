@@ -35,8 +35,8 @@ const Profile = () => {
         "http://localhost:3001/users/" + params.userId
       );
       const getprofiledata = await profileData.json();      
-      const lat = parseFloat(getprofiledata.userInfo.city.value[0])
-      const lng = parseFloat(getprofiledata.userInfo.city.value[1])
+      const lat = parseFloat(getprofiledata.userInfo[0].city.value[0])
+      const lng = parseFloat(getprofiledata.userInfo[0].city.value[1])
       const getlocation = { lat, lng };
       setprofiledata([getprofiledata]);
       setlocation(getlocation)
@@ -61,6 +61,7 @@ const Profile = () => {
               />
             </div>
             <div className="w-5/8 ml-2 md:ml-10 md:w-4/5 md:px-16">
+              {/* {parseFloat(profiledata.userInfo.city.value[0])} */}
               
             {profiledata.map((user)=>(<h2 className="py-1 border-2 bg-white rounded-xl font-semibold md:text-3xl text-1xl pl-3 md:font-bold md:leading-relaxed w-3/4 text-black">
                 {user.username}

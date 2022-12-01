@@ -173,17 +173,17 @@ export const Contact = () => {
             />
             <br />
             <input
-              type="hidden"
+              type=""
               placeholder={user.username}
-              value={user.username}
+              
               name="from_name"
               className="w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm"
             />
             <br />
             <input
-              type="hidden"
+              type=""
               placeholder={senderEmail}
-              value={senderEmail}
+              
               name="from_email"
               className="w-full text-xs px-3 h-8 my-2 outline-none rounded-md border focus:shadow-sm"
             />
