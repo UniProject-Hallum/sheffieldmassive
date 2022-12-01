@@ -35,7 +35,7 @@ const Results = () => {
 
     getUserID();
   }, [ignore]);
-
+console.log(results)
   return (
     <div>
       <Header />
@@ -67,7 +67,7 @@ const Results = () => {
                   <h2 className="rounded-xl font-bold md:text-2xl text-1xl md:font-medium pl-3 py-2 md:leading-relaxed bg-[#ceeaf2] w-3/4 text-[#606060]">
                     {getuser.username}
                   </h2>
-                  {getuser.userInfo.map((info) => (
+                  {/* {getuser.userInfo.map((info) => ( */}
                     <h4 className="font-bold md:text-1xl text-1xl md:font-medium md:leading-relaxed mt-2 mb-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -88,11 +88,11 @@ const Results = () => {
                           d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
                         />
                       </svg>
-                      {info.city["label"]} , UK
+                      {getuser.userInfo.city["label"]} , UK
                     </h4>
-                  ))}
+                  {/* ))} */}
 
-                  {getuser.userInfo.map((info) => (
+                  {/* {getuser.userInfo.map((info) => ( */}
                     
                       <a href={user ? "/profile/" + getuser._id : "/login"}>
                         <div class="pt-10 md:float-right">
@@ -102,7 +102,7 @@ const Results = () => {
                         </div>
                       </a>
                     
-                  ))}
+                  {/* ))} */}
 
                   <div class="pt-5 flex items-center flex-row">
                     <svg
