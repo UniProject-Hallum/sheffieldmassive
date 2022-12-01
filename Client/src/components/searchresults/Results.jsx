@@ -35,7 +35,7 @@ const Results = () => {
 
     getUserID();
   }, [ignore]);
-console.log(results)
+  
   return (
     <div>
       <Header />
