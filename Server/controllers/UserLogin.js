@@ -1,0 +1,55 @@
+import jwt from 'jsonwebtoken';
+import userModel from "../models/UserModel.js";
+
+import bcrypt from "bcryptjs"
+
+
+
+const UserLogin  =async (req, res) => {
+
+    const {email,password}= req.body;
+
+    
+    const user = await userModel.findOne({"email":email});
+    
+    if(user == null){
+        console.log('this is the request body ' + user);
+        return res.status(500).json({message:"Error with password or username please try again"})
+    }else{
+        
+        const userPassword= user.password;
+        const username= user.username;
+        const role= user.role;
+        const id = user._id;
+        const userInfo= user.userInfo
+
+        const passwordIsSame= await bcrypt.compare(password,userPassword);
+
+        if(!passwordIsSame){
+        
+            return res.status(500).json({message:"Error with password or username please try again"});
+        }
+
+        if(passwordIsSame){
+            try {
+                console.log("user item:    "+  user)
+                const maxAge = 60*60*3;
+                const token = jwt.sign({
+                    id,email,username,role,userInfo
+                },process.env.JWT_SECRET,
+                {
+                    expiresIn: maxAge,
+                })            
+                console.log(token)
+                return res.json(token);
+
+            } catch (error) {
+                console.log(error);
+                return res.status(500).send(error);
+            }      
+        }
+        
+    }
+}
+
+export default UserLogin;
