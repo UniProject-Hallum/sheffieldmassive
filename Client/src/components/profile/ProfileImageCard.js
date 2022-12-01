@@ -1,5 +1,4 @@
 const ProfileImageCard = (props) => {
-    console.log(props.img);
   
     return (
       <div className="">

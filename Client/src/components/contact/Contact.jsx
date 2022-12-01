@@ -38,16 +38,15 @@ export const Contact = () => {
         let job = {subject,senderEmail,message}
         let existingJobs = []
         existingJobs = [...existingJobs, job]
-        console.log("lexisting"+JSON.stringify( existingJobs))
-        
 
+      
         getUserID()
         let profileJobs = profiledata.userInfo.requestedJobs
-          console.log("profile"+JSON.stringify( profileJobs))
+          
           
           existingJobs = [...existingJobs, ...profileJobs]
 
-          console.log("combined"+JSON.stringify( existingJobs))
+        
         let userInfo = {
             description: profiledata.userInfo.description,
             gender:  profiledata.userInfo.gender,
@@ -57,7 +56,7 @@ export const Contact = () => {
             acceptedJobs: profiledata.userInfo.acceptedJobs,
             requestedJobs: existingJobs,
           };    
-        console.log(userInfo)
+        
         const res= await axios.patch('http://localhost:3001/user/'+profiledata._id, {email: profiledata.email,
         userInfo: userInfo ,id : profiledata._id
         });  
