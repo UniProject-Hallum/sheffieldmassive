@@ -58,7 +58,7 @@ const SearchUser = async (req, res) => {
     const searchUser = await users.find({
       $and: [
         { "userInfo.skills.label": { $regex: req.params.skill } },
-        { "userInfo.city.label": { $regex: req.params.city } },
+         { "userInfo.city.label": { $regex: req.params.city } },
         { "userInfo.cost": { $lte: req.params.cost } },
       ],
     });
