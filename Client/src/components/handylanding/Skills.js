@@ -29,8 +29,8 @@ function Skills() {
   let welcomeMessage = "Welcome Back ";
 
   console.log(user.userInfo.city.value[0])
-  const lat = parseFloat(user.userInfo.city.value[0]);
-  const lng = parseFloat(user.userInfo.city.value[1]);
+  const lat = parseFloat(selectedCity.value[0]);
+  const lng = parseFloat(selectedCity.value[1]);
  
   const location = { lat, lng };
 
@@ -41,7 +41,7 @@ function Skills() {
     });
   }
 
-  let renderList = listOfSkills.map((item, i) => (
+  let renderList = selectedOptions.map((item, i) => (
     <div
       className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
       key={i}
@@ -115,7 +115,7 @@ function Skills() {
           {isShown === false && (
             <button
               onClick={handleClick}
-              className="flex justify-end  inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-yellow-500 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="flex justify-end  inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Update
               <svg
@@ -163,27 +163,31 @@ function Skills() {
             <h6 className="mb-3 mt-2 text-xl font-medium tracking-tight text-gray-900 dark:text-white">
               Description
             </h6>
-            {user.userInfo["description"]}
+            {descriptionValue}
 
             <h6 className="mb-3 mt-2 text-xl font-medium tracking-tight text-gray-900 dark:text-white">
               Email
             </h6>
-            {user.email}
+            {emailValue}
             <div className="flex mt-4">
               <div>
                 <h6 className="mb-3 text-xl font-medium tracking-tight text-gray-900 dark:text-white">
                   city
                 </h6>
-                {user.userInfo.city.label}
+                {selectedCity.label}
               </div>
 
               <div className="ml-28">
                 <h6 className="mb-3 text-xl font-medium tracking-tight text-gray-900 dark:text-white">
                   price/hr
                 </h6>
-                £{user.userInfo.cost}
+                £{costValue}
               </div>
             </div>
+
+            <div className="mt-2 h-48">
+                    <Map location={location} />
+              </div>
           </>
         )}
 
@@ -249,13 +253,13 @@ function Skills() {
               placeholder="price/hr"
               onChange={(e) => setCostValue(e.target.value)}
             />
+
+            
           </>
         )}
       </div>
 
-      <div className="mt-2 h-48">
-        <Map location={location} />
-      </div>
+      
     </div>
   );
 }

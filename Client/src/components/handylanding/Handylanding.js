@@ -35,9 +35,9 @@ const Handylanding = () => {
           <Jobrequests className=""></Jobrequests>
         </div>
 
-        {/* <div className=" ">
+        <div className=" ">
           <Acceptedjobs className=""></Acceptedjobs>
-        </div> */}
+        </div>
 
         
       </div>

@@ -7,6 +7,7 @@ import Card from "../cards/Card";
 // import Carousel from "../carousel/Carousel";
 
 const Landing = () => {
+  
   return (
     <div>
       <Header />
