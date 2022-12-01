@@ -61,7 +61,6 @@ const Profile = () => {
               />
             </div>
             <div className="w-5/8 ml-2 md:ml-10 md:w-4/5 md:px-16">
-              {/* {parseFloat(profiledata.userInfo.city.value[0])} */}
               
             {profiledata.map((user)=>(<h2 className="py-1 border-2 bg-white rounded-xl font-semibold md:text-3xl text-1xl pl-3 md:font-bold md:leading-relaxed w-3/4 text-black">
                 {user.username}
@@ -121,17 +120,6 @@ const Profile = () => {
             <h4 className="font-bold text-2xl md:font-medium  md:leading-relaxed mt-7 mb-7">
               Completed projects
             </h4>
-            {/* <div className="grid grid-rows-2 grid-cols-4 gap-4 ">
-              <img
-                className="rounded-lg row-span-2 col-span-2"
-                src={handyman}
-                alt=""
-              ></img>
-              <img className="rounded-lg" src={handyman} alt=""></img>
-              <img className="rounded-lg" src={handyman} alt=""></img>
-              <img className="rounded-lg" src={handyman} alt=""></img>
-              <img className="rounded-lg" src={handyman} alt=""></img>
-            </div> */}
             <div className=" mt-3">
                     <div className='md:hidden'>
                                     <ul className='flex overflow-x-auto gap-6 snap-x snap-mandatory'>
