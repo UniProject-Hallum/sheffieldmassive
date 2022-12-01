@@ -24,7 +24,7 @@ function Skills() {
   const citiesList = getCities();
   let listOfSkills = user.userInfo.skills;
   let ListOfCities = [];
-
+  
 
   let welcomeMessage = "Welcome Back ";
 

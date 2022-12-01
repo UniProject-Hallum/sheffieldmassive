@@ -50,15 +50,18 @@ const Register = () => {
   const OnClickSignup = async () => {
     try {
       let itoken;
+      let userinfo=''
       let values = [];
-      selectedOptions.forEach((obj) => {
-        values.push({
-          label: obj["label"],
-          lng: obj["value"].lng,
-          lat: obj["value"].lat,
+      
+      if (roleValue == 'handyman'){
+        selectedOptions.forEach((obj) => {
+          values.push({
+            label: obj["label"],
+            lng: obj["value"].lng,
+            lat: obj["value"].lat,
+          });
         });
-      });
-      let userinfo = {
+       userinfo = {
         description: descriptionValue,
         gender: genderProfileValue,
         skills: values,
@@ -67,7 +70,7 @@ const Register = () => {
         cost: costValue,
         acceptedJobs: [],
         requestedJobs: [],
-      };
+      };}
 
       console.log("this is user info :  " + JSON.stringify(userinfo));
       const response = await axios.post(baseurl + "/api/register", {
@@ -80,12 +83,12 @@ const Register = () => {
       itoken = response.data;
       console.log(itoken);
       setToken(itoken);
-
-      if (roleValue == "handyman") {
-        navigate("/handyman");
-      } else {
-        navigate("/profile");
-      }
+      navigate('/redirect')
+      // if (roleValue == "handyman") {
+      //   navigate("/handyman");
+      // } else {
+      //   navigate("/user");
+      // }
     } catch (e) {
       console.error("There was an error!", e.response.data.message);
       setErrorMessage(e.response.data.message);
@@ -103,7 +106,7 @@ const Register = () => {
         <div className="md:w-1/2 px-16">
           <h2 className="font-bold text-2xl text-[#606060]">Register</h2>
           <p className="text-sm mt-4 text-[#606060]">
-            You aren't a memeber, easily register
+            Register now for full access
           </p>
           {errorMessage && (
             <div className="fail p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800">
@@ -232,7 +235,7 @@ const Register = () => {
                     name="description"
                   />
                 </div>
-                <p>Please Select all you Skills</p>
+                <p>Please select all your skills</p>
 
                 <Select
                   className="mt-2"
@@ -243,7 +246,7 @@ const Register = () => {
                   isMulti
                 />
 
-                <p>Please Select Your Location</p>
+                <p>Please select your location</p>
 
                 <Select
                   options={ListOfCities}
@@ -253,7 +256,7 @@ const Register = () => {
                   isSearchable={true}
                 />
 
-                <p>What is your average price per hour for a job </p>
+                <p>What is your average price per hour for a job? </p>
 
                 <input
                   required

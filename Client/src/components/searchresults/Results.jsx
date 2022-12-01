@@ -56,9 +56,9 @@ const Results = () => {
           {results.map((getuser) => (
             <div className="flex items-center justify-center mt-6">
               <div className="flex rounded shadow-lg p-5 w-4/5 rounded-xl">
-                <div className="w-1/5">
+                <div className="w-1/5 md:block hidden">
                   <img
-                    className="rounded-full h-52 w-52 ml-6"
+                    className="rounded-full shadow-xl h-52 w-52 ml-6"
                     src={handyman}
                     alt=""
                   />
@@ -75,7 +75,7 @@ const Results = () => {
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
                         stroke="currentColor"
-                        class="w-6 h-6"
+                        class="w-6 h-6 float-left"
                       >
                         <path
                           stroke-linecap="round"
@@ -93,15 +93,15 @@ const Results = () => {
                   ))}
 
                   {getuser.userInfo.map((info) => (
-                    <p>
+                    
                       <a href={user ? "/profile/" + getuser._id : "/login"}>
-                        <div class="pt-10 float-right">
+                        <div class="pt-10 md:float-right">
                           <button className=" py-1 text-white bg-[#118AB2] px-5 border rounded-xl hover:bg-[#fccc35] hover:scale-110">
                             View
                           </button>
                         </div>
                       </a>
-                    </p>
+                    
                   ))}
 
                   <div class="pt-5 flex items-center flex-row">

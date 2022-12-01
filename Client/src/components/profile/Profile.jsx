@@ -4,6 +4,9 @@ import Footer from "../footer/Footer";
 import handyman from "../../assets/3.jpg";
 import Stars from "./Stars";
 import Map from "../Map/Map";
+import ImageGallery from 'react-image-gallery';
+import ProfileImageCard from "./ProfileImageCard";
+
 
 import { Link, useParams } from "react-router-dom";
 
@@ -11,6 +14,20 @@ const Profile = () => {
   const [profiledata, setprofiledata] = useState([]);
   const [location, setlocation] = useState([]);
   const params = useParams();
+  let projectimage1='https://picsum.photos/id/1018/1000/600/'
+  let projectimage2 ='https://picsum.photos/id/1015/1000/600/'
+  let projectimage3 ='https://picsum.photos/id/1019/1000/600/'
+  let projectimage4 ='https://picsum.photos/id/1016/1000/600/'
+  let projectimage5 ='https://picsum.photos/id/1016/1000/600/'
+ 
+
+  const imgs = [
+    projectimage1,
+    projectimage2,
+    projectimage3,
+    projectimage4,
+    projectimage5
+  ];
   
   useEffect(() => {
     const getUserID = async () => {
@@ -18,8 +35,8 @@ const Profile = () => {
         "http://localhost:3001/users/" + params.userId
       );
       const getprofiledata = await profileData.json();      
-      const lat = parseFloat(getprofiledata.userInfo[0].city.value[0])
-      const lng = parseFloat(getprofiledata.userInfo[0].city.value[1])
+      const lat = parseFloat(getprofiledata.userInfo.city.value[0])
+      const lng = parseFloat(getprofiledata.userInfo.city.value[1])
       const getlocation = { lat, lng };
       setprofiledata([getprofiledata]);
       setlocation(getlocation)
@@ -34,11 +51,11 @@ const Profile = () => {
         <Header />
         
       <div className="">
-        <div className="md:flex items-center justify-center mt-7 shadow-xl">
+        <div className="md:flex items-center justify-center mt-7 shadow-xl bg-[#E0F0F5]">
           <div className="flex p-7 w-4/5 ">
             <div className="w-3/8 md:w-1/5 ">
               <img
-                className="rounded-full max-w-md w-20 h-20 md:h-52 md:w-52 ml-6"
+                className="ring-2 ring-black rounded-full max-w-md w-20 h-20 md:h-52 md:w-52 ml-6"
                 src={handyman}
                 alt=""
               />
@@ -46,7 +63,7 @@ const Profile = () => {
             <div className="w-5/8 ml-2 md:ml-10 md:w-4/5 md:px-16">
               {/* {parseFloat(profiledata.userInfo.city.value[0])} */}
               
-            {profiledata.map((user)=>(<h2 className="font-semibold md:text-3xl text-1xl md:font-bold md:leading-relaxed w-3/4 text-black">
+            {profiledata.map((user)=>(<h2 className="py-1 border-2 bg-white rounded-xl font-semibold md:text-3xl text-1xl pl-3 md:font-bold md:leading-relaxed w-3/4 text-black">
                 {user.username}
               </h2>))}  
               
@@ -56,7 +73,7 @@ const Profile = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="mt-2 w-6 h-6"
+                className="mt-2 w-6 h-6 md:float-left"
               >
                 <path
                   strokeLinecap="round"
@@ -81,7 +98,7 @@ const Profile = () => {
               
             </div>
           </div>
-          <div className='flex item-center justify-center  text-center md:hidden'>
+          <div className='p-4 item-center justify-center  text-center md:hidden'>
             {profiledata.map((user)=>(<p >{user.userInfo.map((info)=>(<p>{info.description} </p>))}</p>))}
             <Stars />
           </div>
@@ -104,7 +121,7 @@ const Profile = () => {
             <h4 className="font-bold text-2xl md:font-medium  md:leading-relaxed mt-7 mb-7">
               Completed projects
             </h4>
-            <div className="grid grid-rows-2 grid-cols-4 gap-4 ">
+            {/* <div className="grid grid-rows-2 grid-cols-4 gap-4 ">
               <img
                 className="rounded-lg row-span-2 col-span-2"
                 src={handyman}
@@ -114,7 +131,50 @@ const Profile = () => {
               <img className="rounded-lg" src={handyman} alt=""></img>
               <img className="rounded-lg" src={handyman} alt=""></img>
               <img className="rounded-lg" src={handyman} alt=""></img>
+            </div> */}
+            <div className=" mt-3">
+                    <div className='md:hidden'>
+                                    <ul className='flex overflow-x-auto gap-6 snap-x snap-mandatory'>
+                                        {imgs.map((image,index) => (
+                                            <li  className='shrink-0 snap-center'>
+                                                <ProfileImageCard key={index} img={image}/>
+                                            </li>
+                                        ))}
+                                    </ul>
+                      </div>
+                      <div className="hidden md:block  ">
+                                <div className="grid-cols-4 space-y-2 md:space-y-0 md:grid md:gap-3  ">
+                                    <div className=" w-full col-span-2 bg-yellow-600 row-span-2 rounded ">
+                                        <img className='rounded-xl h-full object-cover hover:scale-105 transition duration-200 ease-in-out'
+                                            src={projectimage1}
+                                            alt="image"/>
+                                    </div>
+                                    <div className=" w-full   rounded ">
+                                        <img className='rounded-xl h-full object-cover  hover:scale-105 transition duration-200 ease-in-out'
+                                             src={projectimage2}
+                                             alt="image"/>
+                                    </div>
+                                    <div className="w-full h-full rounded ">
+                                        <img className='rounded-xl h-full object-cover hover:scale-105 transition duration-200 ease-in-out'
+                                             src={projectimage3}
+                                            alt="image"/>
+                                    </div>
+                                    <div className="w-full h-full rounded ">
+                                        <img className='rounded-xl h-full object-cover hover:scale-105 transition duration-200 ease-in-out'
+                                             src={projectimage4}
+                                            alt="image"/>
+                                    </div>
+                                    <div className="w-full h-full rounded ">
+                                        <img className ='rounded-xl h-full object-cover hover:scale-105 transition duration-200 ease-in-out'
+                                             src={projectimage5}
+                                            alt="image"/>
+                                    </div>
+                                </div>
+                            </div>
+
             </div>
+              
+
 
             <div class="py-7 mt-5">
               <div class="col-span-1 container-mx-auto">
@@ -131,7 +191,7 @@ const Profile = () => {
         </div>
       </div>
 
-      <div className="py-8 flex-col">
+      <div className="py-6 flex-col">
       </div>
       <div className="mx-auto w-4/5">
         <Link to={"/contact/"+params.userId}>

@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import useToken from "../../auth/useToken";
 import handyman from "../../assets/2.png";
+import { useUser } from "../../auth/useUser";
+
 
 const Login = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -10,6 +12,7 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const baseurl = "http://localhost:3001";
   const [token, setToken] = useToken();
+  
   const navigate = useNavigate();
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePassword = () => {
@@ -27,7 +30,7 @@ const Login = () => {
       itoken = response.data;
       console.log(itoken);
       setToken(itoken);
-      navigate("/profile");
+     navigate('/redirect')
     } catch (e) {
       setErrorMessage(e.response.data.message);
       console.error("There was an error!", e.response.data.message);
